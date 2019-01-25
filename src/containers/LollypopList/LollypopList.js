@@ -110,7 +110,6 @@ class LollypopList extends Component {
 
   render() {
     const { items, total_items, total, packaging } = this.state;
-    const { onStepClick, steps, site, enabled } = this.props;
 
     return (
       <Aux>
@@ -199,7 +198,7 @@ class LollypopList extends Component {
               : null
             : null}
 
-          {this.state.thank_popup ? <ThanksPage reload={this.reload} /> : null}
+          {this.state.thank_popup && <ThanksPage reload={this.reload} />}
         </div>
       </Aux>
     );
