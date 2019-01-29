@@ -1,0 +1,31 @@
+$break-small: 700px;
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 195px;
+  height: 100%;
+
+  color: #5a5a5a;
+  padding: 0 15px 15px;
+  background-color: #fff;
+  background-image: url('../../../assets/img/noisy-bg.png');
+  box-shadow: inset -5px 0 8px #eee;
+  border-right: 1px solid #ebebeb;
+  z-index: 200;
+  overflow: auto;
+  transition: transform .3 ease-out;
+
+  &.open {
+    transform: translate(0);
+  }
+
+  &.close {
+    transform: translate(-100%);
+  }
+
+  @media screen and (min-width: $break-small) {
+    display: none;
+  }
+}

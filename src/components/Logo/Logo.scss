@@ -1,0 +1,11 @@
+$break-small: 700px;
+
+.page-logo {
+  max-width: 150px;
+  padding: 10px 10px 25px;
+
+  @media screen and (max-width: $break-small) {
+    max-width: 130px;
+    padding: 10px;
+  }
+}

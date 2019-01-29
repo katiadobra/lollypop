@@ -1,24 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
-import './Layout.scss';
 import LollypopList from '../../containers/LollypopList/LollypopList';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
+import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Teaser from '../Lollypop/Teaser/Teaser';
 
-const layout = props =>
-  <Aux>
-    <div className="actionteaser">
-      <span className="actionteaser__text">
-        Предложение к 14 февраля: Получи скидку 20 грн.
-      </span>
-      <span className="actionteaser__code">
-        Добавь к заказу* : 2019VALENTINE
-      </span>
-    </div>
-    <Toolbar />
+class Layout extends Component {
+  state = {
+    showSideDraw: false
+  };
 
-    <main className="main">
-      <LollypopList />
-    </main>
-  </Aux>;
+  sideDrawerClosedHandler = () => {
+    this.setState({ showSideDraw: false });
+  };
 
-export default layout;
+  // sideDrawerOpenHandler = () => {
+  //   this.setState({ showSideDraw: true });
+  // };
+
+  sideDrawerToggleHandler = () => {
+    this.setState(prevState => {
+      return { showSideDraw: !prevState.showSideDrawer };
+    });
+  };
+
+  render() {
+    const { showSideDraw } = this.state;
+
+    return (
+      <Aux>
+        <Teaser code="2019VALENTINE">
+          Предложение к 14 февраля: Получи скидку 20 грн.
+        </Teaser>
+        <Toolbar open={this.sideDrawerToggleHandler} />
+        <SideDrawer open={showSideDraw} closed={this.sideDrawerClosedHandler} />
+
+        <main className="main">
+          <LollypopList />
+        </main>
+      </Aux>
+    );
+  }
+}
+
+export default Layout;
