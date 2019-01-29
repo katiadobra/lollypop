@@ -9,7 +9,10 @@ class LollypopItem extends Component {
 
     return (
       <div className="llp-item item-containe">
-        <img src={item.src} alt={item.name} className="img llp-item__img" />
+        <div className="llp-item__img-wrap">
+          <img src={item.src} alt={item.name} className="img llp-item__img" />
+        </div>
+
         <div className="llp-item__descr">
           <h3 className="llp-item__ttl">
             {item.name}

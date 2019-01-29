@@ -28,14 +28,19 @@ $break-md: 1281px;
     font-size: 14px;
   }
 
+  &__img-wrap {
+    max-height: 150px;
+    overflow: hidden;
+
+    @media screen and (max-width: $break-small) {
+      max-height: 130px;
+    }
+  }
+
   &__img {
     width: 100%;
     padding: 0;
-
-    &:hover {
-      padding: 0;
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 
   @media screen and (max-width: $break-small) {
@@ -49,6 +54,12 @@ $break-md: 1281px;
 
   @media screen and (min-width: $break-large) and (max-width: $break-md) {
     width: calc(33.33% - 2rem);
+  }
+
+  &:hover {
+    .llp-item__img {
+      transform: scale(1.2);
+    }
   }
 }
 .item-container {
