@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
-import LollypopList from '../../containers/LollypopList/LollypopList';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
-import Teaser from '../Lollypop/Teaser/Teaser';
+import LollypopList from '../LollypopList/LollypopList';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
   state = {
@@ -13,10 +12,6 @@ class Layout extends Component {
   sideDrawerClosedHandler = () => {
     this.setState({ showSideDraw: false });
   };
-
-  // sideDrawerOpenHandler = () => {
-  //   this.setState({ showSideDraw: true });
-  // };
 
   sideDrawerToggleHandler = () => {
     this.setState(prevState => {
@@ -29,9 +24,6 @@ class Layout extends Component {
 
     return (
       <Aux>
-        <Teaser code="2019VALENTINE">
-          Предложение к 14 февраля: Получи скидку 20 грн.
-        </Teaser>
         <Toolbar open={this.sideDrawerToggleHandler} />
         <SideDrawer open={showSideDraw} closed={this.sideDrawerClosedHandler} />
 

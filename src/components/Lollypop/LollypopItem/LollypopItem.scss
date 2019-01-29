@@ -18,6 +18,14 @@ $break-md: 1281px;
   }
 
   &__ttl {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__price {
+    margin-bottom: 13px;
+    font-size: 14px;
   }
 
   &__img {
@@ -31,8 +39,8 @@ $break-md: 1281px;
   }
 
   @media screen and (max-width: $break-small) {
-    width: 50%;
-    margin: 0;
+    width: 47%;
+    margin: 0 1.5% 3%;
   }
 
   @media screen and (min-width: $break-small) and (max-width: $break-large) {

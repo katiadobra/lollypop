@@ -15,7 +15,7 @@ class LollypopItem extends Component {
             {item.name}
           </h3>
 
-          <p>
+          <p className="llp-item__price">
             {item.cost.toFixed(2)} грн.
           </p>
           <button

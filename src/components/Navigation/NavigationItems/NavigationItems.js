@@ -2,17 +2,15 @@ import React from 'react';
 import './NavigationItems.scss';
 
 const navigationItems = props =>
-  <nav className="page-nav">
-    <ul class="main-nav">
-      <NavigationItem link="/" active>
-        Заколочки
-      </NavigationItem>
-      <NavigationItem link="/">Резинки</NavigationItem>
-      <NavigationItem link="/">Повязки</NavigationItem>
-      <NavigationItem link="/">Как заказать</NavigationItem>
-      <NavigationItem link="/">Контакты</NavigationItem>
-    </ul>
-  </nav>;
+  <ul class="main-nav">
+    <NavigationItem link="/" active>
+      Заколочки
+    </NavigationItem>
+    <NavigationItem link="/">Резинки</NavigationItem>
+    <NavigationItem link="/">Повязки</NavigationItem>
+    <NavigationItem link="/">Как заказать</NavigationItem>
+    <NavigationItem link="/">Контакты</NavigationItem>
+  </ul>;
 
 const NavigationItem = props =>
   <li>

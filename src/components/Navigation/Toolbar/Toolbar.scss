@@ -3,10 +3,13 @@ $break-large: 900px;
 $break-md: 1281px;
 
 .page-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #fff;
   font-size: 12px;
   text-align: center;
+  z-index: 10;
 }
 
 .popup_btn {
@@ -50,7 +53,7 @@ $break-md: 1281px;
   }
 
   @media screen and (max-width: $break-small) {
-    bottom: 27px;
+    bottom: 23px;
     right: 1rem;
   }
 }

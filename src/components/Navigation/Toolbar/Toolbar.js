@@ -1,7 +1,9 @@
 import React from 'react';
-import Cart from '../../../img/cart.png';
+import Cart from '../../../assets/img/cart.png';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import Teaser from '../../Lollypop/Teaser/Teaser';
+
 import './Toolbar.scss';
 
 const toolbar = props => {
@@ -9,6 +11,9 @@ const toolbar = props => {
 
   return (
     <header className="page-header">
+      <Teaser code="2019VALENTINE">
+        Предложение к 14 февраля: Получи скидку 20 грн.
+      </Teaser>
       <button className="drawer-toggle" onClick={open}>
         <svg viewBox="0 0 86 59" id="icon-menu" width="100%" height="100%">
           <path
@@ -18,7 +23,10 @@ const toolbar = props => {
         </svg>
       </button>
       <Logo />
-      <NavigationItems />
+      <nav className="page-nav">
+        <NavigationItems />
+      </nav>
+
       <button className="popup_btn">
         <img src={Cart} alt="" />
         {/* <svg viewBox="0 0 19 19" id="icon-basket" width="100%" height="100%">
