@@ -28,4 +28,38 @@ $break-small: 700px;
   @media screen and (min-width: $break-small) {
     display: none;
   }
+
+  &__header {
+    padding: 10px 0;
+    border-bottom: 1px solid #d8d8d8;
+  }
+}
+
+.close-btn {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  color: #5a5a5a;
+  font-weight: 100;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 2px;
+    height: 8px;
+    background-color: #5a5a5a;
+    border-radius: 2px;
+    transform: rotate(40deg);
+  }
+
+  &:after {
+    transform: rotate(-40deg);
+  }
 }

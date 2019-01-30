@@ -26,3 +26,12 @@ $break-md: 1281px;
     display: none;
   }
 }
+
+.side-drawer {
+  .main-nav {
+    li {
+      display: block;
+      padding: 15px 0 10px;
+    }
+  }
+}

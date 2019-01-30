@@ -12,7 +12,13 @@ const sideDrawer = props => {
     <Aux>
       <Backdrop show={open} clicked={props.closed} />
       <div className={`side-drawer ${open ? 'open' : 'close'}`}>
-        <button onClick={closed}>x</button>
+        <div className="side-drawer__header">
+          <span>Меню</span>
+          <button className="close-btn" onClick={closed}>
+            закрыть
+          </button>
+        </div>
+
         <Logo />
         <Nav />
       </div>
