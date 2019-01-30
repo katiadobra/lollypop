@@ -1,12 +1,16 @@
 import React from 'react';
+import './ThanksPage.scss';
 
 const thanksPage = props => {
   return (
     <div className="thank_you">
-      <h1>thank you</h1>
-      <p>We will deliver your package at your doorstep shortly.</p>
-      <button className="order_btn" onClick={() => props.reload()}>
-        Go Back to Shopping
+      <h1 className="thank_you__caption">Спасибо за заказ!</h1>
+      <p>Мы доставим вашу посылку в ближайшее время.</p>
+      <button
+        className="thank_you__btn order_btn"
+        onClick={() => props.reload()}
+      >
+        Вернуться к покупкам
       </button>
     </div>
   );

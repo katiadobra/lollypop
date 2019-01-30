@@ -113,9 +113,6 @@ class LollypopList extends Component {
 
     return (
       <Aux>
-        {/* <Modal>
-          <OrderSummary />
-        </Modal> */}
         <div className="list-container">
           {items.map((item, id) => {
             return (
@@ -154,24 +151,24 @@ class LollypopList extends Component {
                 </div>
                 <div>
                   <div className="final_price">
-                    <div className="cart_item">
+                    <div className="cart_item final_price__row">
                       <h3>Цена:</h3>
                       <div>
                         {total.toFixed(2)} грн.
                       </div>
                     </div>
-                    <div className="cart_item">
-                      <h3>Транспортные расходы:</h3>
+                    <div className="cart_item final_price__row">
+                      <h3>Доставка:</h3>
                       <div>Бесплатно</div>
                     </div>
-                    <div className="cart_item">
+                    <div className="cart_item final_price__row">
                       <h3>Упаковка:</h3>
                       <div>
                         {packaging.toFixed(2)} грн.
                       </div>
                     </div>
                   </div>
-                  <div className="final_price">
+                  <div className="final_price final_price__row">
                     <h3>Общая стоимость:</h3>
                     <div>
                       {(total + packaging).toFixed(2)} грн.

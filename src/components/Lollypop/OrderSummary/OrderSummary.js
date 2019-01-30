@@ -1,22 +1,26 @@
 import React from 'react';
 import Aux from '../../../hoc/Aux';
+import './OrderSummery.scss';
 
-const Item = props => {
-  let item1 = props.item1;
+const OrderSummaryItem = props => {
+  let OrderSummaryItem = props.item1;
 
   return (
-    <div className="cart_item">
-      <img src={item1.src} alt="" />
-      <span className="cart_info">
-        <h3>
-          {item1.name} x {item1.qty}
-        </h3>
-        <h3>
-          Цена : {item1.cost} грн.
-        </h3>
-        <h3>
-          Всего : {(item1.cost * item1.qty).toFixed(2)} грн.
-        </h3>
+    <div className="cart-item cart_item">
+      <img src={OrderSummaryItem.src} alt="" />
+      <span className="cart-item__info">
+        <div className="cart-item__ttl">
+          {OrderSummaryItem.name} x {OrderSummaryItem.qty}
+        </div>
+        <div>
+          Цена: {OrderSummaryItem.cost} грн.
+        </div>
+        <div>
+          Всего: {(OrderSummaryItem.cost * OrderSummaryItem.qty).toFixed(
+            2
+          )}{' '}
+          грн.
+        </div>
       </span>
     </div>
   );
@@ -33,7 +37,7 @@ const orderSummary = props => {
             {data.map((item1, id1) => {
               return (
                 <div key={id1}>
-                  {item1.qty !== 0 ? <Item item1={item1} /> : null}
+                  {item1.qty !== 0 && <OrderSummaryItem item1={item1} />}
                 </div>
               );
             })}
@@ -42,31 +46,31 @@ const orderSummary = props => {
         <div className="cart_right">
           <div className="final_price">
             <div className="cart_item">
-              <h3>Items Price:</h3>
+              <h3>Цена товаров:</h3>
               <h3>
                 {total.toFixed(2)} грн.
               </h3>
             </div>
             <div className="cart_item">
-              <h3>Delivery Charges:</h3>
+              <h3>Доставка:</h3>
               <h3>Free</h3>
             </div>
             <div className="cart_item">
-              <h3>Packaging:</h3>
+              <h3>Упаковка:</h3>
               <h3>
                 {packaging.toFixed(2)} грн.
               </h3>
             </div>
           </div>
           <div className="final_price">
-            <h3>Total Price:</h3>
+            <h3>Общая стоимость:</h3>
             <h3>
               {(total + packaging).toFixed(2)} грн.
             </h3>
           </div>
 
           <button className="order_btn" onClick={showPopup}>
-            order now
+            Заказать сейчас
           </button>
         </div>
       </div>
