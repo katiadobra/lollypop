@@ -2,7 +2,7 @@ import React from 'react';
 import './NavigationItems.scss';
 
 const navigationItems = props =>
-  <ul class="main-nav">
+  <ul className="main-nav">
     <NavigationItem link="/" active>
       Заколочки
     </NavigationItem>

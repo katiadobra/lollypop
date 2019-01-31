@@ -5,6 +5,8 @@ import LollypopItem from '../../components/Lollypop/LollypopItem/LollypopItem';
 import OrderSummary from '../../components/Lollypop/OrderSummary/OrderSummary';
 import './LollypopList.scss';
 import ThanksPage from '../../components/Lollypop/ThanksPage/ThanksPage';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import axios from '../../axios.orders';
 
 class LollypopList extends Component {
   state = {
@@ -63,7 +65,8 @@ class LollypopList extends Component {
     total: 0,
     packaging: 1.99,
     popup: false,
-    thank_popup: false
+    thank_popup: false,
+    loading: false
   };
 
   add = (name, cost) => {
@@ -108,8 +111,40 @@ class LollypopList extends Component {
     window.location.href = window.location.href;
   };
 
+  orderBtnHandler = () => {
+    this.setState({ loading: true });
+    const order = {
+      price: this.state.total,
+      items: this.state.total_items,
+      customer: {
+        name: 'Nata',
+        adress: 'Berlin 12345',
+        email: 'lolly.pp.ua@gmail.com'
+      }
+    };
+    axios
+      .post('/orders.json', order)
+      .then(response => {
+        this.setState({ loading: false, thank_popup: true });
+        console.log(response);
+      })
+      .catch(error => this.setState({ loading: false }));
+  };
+
   render() {
     const { items, total_items, total, packaging } = this.state;
+
+    // let orderSummary = (
+    //   <OrderSummary
+    //     data={items}
+    //     total={total}
+    //     packaging={packaging}
+    //     onOrderBtnClick={this.orderBtnHandler}
+    //   />
+    // );
+    // if (this.state.loading) {
+    //   orderSummary = <Spinner />;
+    // }
 
     return (
       <Aux>
@@ -190,12 +225,13 @@ class LollypopList extends Component {
                   data={items}
                   total={total}
                   packaging={packaging}
-                  showPopup={this.thank_popup}
+                  onOrderBtnClick={this.orderBtnHandler}
                 />
               : null
             : null}
 
           {this.state.thank_popup && <ThanksPage reload={this.reload} />}
+          {this.state.loading && <Spinner />}
         </div>
       </Aux>
     );

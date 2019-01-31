@@ -27,7 +27,7 @@ const OrderSummaryItem = props => {
 };
 
 const orderSummary = props => {
-  const { data, total, packaging, showPopup } = props;
+  const { data, total, packaging, onOrderBtnClick } = props;
   return (
     <Aux>
       <div className="order">
@@ -69,7 +69,7 @@ const orderSummary = props => {
             </h3>
           </div>
 
-          <button className="order_btn" onClick={showPopup}>
+          <button className="order_btn" onClick={onOrderBtnClick}>
             Заказать сейчас
           </button>
         </div>
