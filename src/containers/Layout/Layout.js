@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
-import LollypopList from '../LollypopList/LollypopList';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
@@ -28,7 +27,7 @@ class Layout extends Component {
         <SideDrawer open={showSideDraw} closed={this.sideDrawerClosedHandler} />
 
         <main className="main">
-          <LollypopList />
+          {this.props.children}
         </main>
       </Aux>
     );

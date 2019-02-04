@@ -21,15 +21,12 @@ class LollypopItem extends Component {
           <p className="llp-item__price">
             {item.cost.toFixed(2)} грн.
           </p>
-          <button
-            className="btn"
-            onClick={() => addToCart(item.name, item.cost)}
-          >
+          <button className="btn" onClick={() => addToCart(item.id, item.cost)}>
             В корзину
           </button>
           <button
             className="btn btn--delete"
-            onClick={() => removeFromCart(item.name, item.cost)}
+            onClick={() => removeFromCart(item.id, item.cost)}
           >
             Удалить
           </button>

@@ -4,9 +4,9 @@ import Aux from '../../hoc/Aux';
 import LollypopItem from '../../components/Lollypop/LollypopItem/LollypopItem';
 import OrderSummary from '../../components/Lollypop/OrderSummary/OrderSummary';
 import './LollypopList.scss';
-import ThanksPage from '../../components/Lollypop/ThanksPage/ThanksPage';
+import ThanksPage from '../../containers/pages/ThanksPage/ThanksPage';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import axios from '../../axios.orders';
+// import axios from '../../axios.orders';
 
 class LollypopList extends Component {
   state = {
@@ -69,9 +69,18 @@ class LollypopList extends Component {
     loading: false
   };
 
-  add = (name, cost) => {
-    this.state.items.map((item, id) => {
-      if (item.name === name) {
+  // componentDidMount() {
+  //   console.log(this.props);
+  //   console.log('did mount');
+  //   axios
+  //     .get('https://lollypop-c3378.firebaseio.com/items.json')
+  //     .then(res => console.log(res))
+  //     .catch(error => console.log(error));
+  // }
+
+  add = (id, cost) => {
+    this.state.items.map(item => {
+      if (item.id === id) {
         item.qty += 1;
       }
     });
@@ -81,9 +90,9 @@ class LollypopList extends Component {
     });
   };
 
-  remove = (name, cost) => {
-    this.state.items.map((item, id) => {
-      if (item.name === name) {
+  remove = (id, cost) => {
+    this.state.items.map(item => {
+      if (item.id === id) {
         if (item.qty !== 0) {
           item.qty -= 1;
           this.setState({
@@ -112,23 +121,26 @@ class LollypopList extends Component {
   };
 
   orderBtnHandler = () => {
-    this.setState({ loading: true });
-    const order = {
-      price: this.state.total,
-      items: this.state.total_items,
-      customer: {
-        name: 'Nata',
-        adress: 'Berlin 12345',
-        email: 'lolly.pp.ua@gmail.com'
-      }
-    };
-    axios
-      .post('/orders.json', order)
-      .then(response => {
-        this.setState({ loading: false, thank_popup: true });
-        console.log(response);
-      })
-      .catch(error => this.setState({ loading: false }));
+    // this.setState({ loading: true });
+    // const order = {
+    //   price: this.state.total,
+    //   items: this.state.total_items,
+    //   customer: {
+    //     name: 'Nata',
+    //     adress: 'Berlin 12345',
+    //     email: 'lolly.pp.ua@gmail.com'
+    //   }
+    // };
+    // axios
+    //   .post('/orders.json', order)
+    //   .then(response => {
+    //     this.setState({ loading: false, thank_popup: true });
+    //     console.log(response);
+    //   })
+    //   .catch(error => this.setState({ loading: false }));
+    // const queryParams = [];
+    // for (let i in this.state.)
+    this.props.history.push('./checkout');
   };
 
   render() {

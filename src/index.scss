@@ -16,6 +16,7 @@ body,
 html {
   height: 100%;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -23,6 +24,10 @@ code {
     font-family: 'Dr Sugiyama', cursive;
     font-family: 'Marck Script', cursive;
     font-family: 'Philosopher', sans-serif; */
+}
+
+.app {
+  padding-top: 167px;
 }
 
 * {
