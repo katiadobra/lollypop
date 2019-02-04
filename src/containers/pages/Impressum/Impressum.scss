@@ -1,4 +1,9 @@
 .impressum {
+  max-width: 700px;
+  margin: 30px auto;
+  font-size: 15px;
+  line-height: 1.8em;
+
   &__caption {
     color: #e1abb9;
   }
@@ -7,12 +12,32 @@
     text-align: center;
 
     button {
-      background-color: #e1abb9;
-      color: #fff;
+      min-width: 130px;
+      margin: 0 auto 30px;
+      padding: .8rem;
+      border: none;
+      color: #5a5a5a;
+      background-color: #f5c5d1;
+      text-align: center;
+      text-transform: uppercase;
     }
   }
 
   strong {
     text-transform: uppercase;
+  }
+
+  a {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: #5a5a5a;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
   }
 }
