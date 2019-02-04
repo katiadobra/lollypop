@@ -18,6 +18,10 @@ $break-md: 1281px;
   a {
     color: inherit;
     text-decoration: none;
+
+    &.active {
+      color: #e1abb9;
+    }
   }
 }
 
