@@ -3,7 +3,15 @@ import './Input.scss';
 
 const input = props => {
   let inputElement = null;
-  const { elementConfig, value, id, change, invalid, touched } = props;
+  const {
+    elementConfig,
+    value,
+    id,
+    change,
+    invalid,
+    touched,
+    shouldValidate
+  } = props;
 
   switch (props.elementType) {
     case 'input':
@@ -41,7 +49,11 @@ const input = props => {
   }
 
   return (
-    <div className={`input-group ${invalid && touched ? 'invalid' : null}`}>
+    <div
+      className={`input-group ${invalid && touched && shouldValidate
+        ? 'invalid'
+        : null}`}
+    >
       <label className="input-group__label" htmlFor={id}>
         {props.label}
       </label>
