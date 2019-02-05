@@ -15,20 +15,6 @@
     width: 40%;
     vertical-align: middle;
     text-align: right;
-    // border-left: 3px solid #d5dfc6;
-
-    &.two {
-      border-left: 3px solid #dab6c8;
-    }
-    &.three {
-      border-left: 3px solid #a6dcee;
-    }
-    &.four {
-      border-left: 3px solid #5389a6;
-    }
-    &.five {
-      border-left: 3px solid #8fa08e;
-    }
   }
 
   &__input {
@@ -52,6 +38,7 @@
   &:nth-child(3n) {
     border-left: 3px solid #a6dcee;
   }
+
   &:nth-child(4n) {
     border-left: 3px solid #5389a6;
   }
@@ -62,5 +49,10 @@
 
   &:nth-child(6n) {
     border-left: 3px solid #f9e3a0;
+  }
+
+  &.invalid {
+    outline: 1px solid rgba(250, 0, 0, .3);
+    border-left: 3px solid #f03f3b;
   }
 }

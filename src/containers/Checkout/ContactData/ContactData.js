@@ -5,58 +5,92 @@ import './ContactData.scss';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 
+let data = {
+  name: {
+    elementType: 'input',
+    elementConfig: {
+      type: 'text'
+    },
+    value: '',
+    label: 'Имя',
+    validation: {
+      required: true
+    },
+    valid: false,
+    touched: false
+  },
+  email: {
+    elementType: 'email',
+    elementConfig: {
+      type: 'email'
+    },
+    value: '',
+    label: 'Email',
+    validation: {
+      required: true,
+      isEmail: true
+    },
+    valid: false,
+    touched: false
+  },
+  phone: {
+    elementType: 'input',
+    elementConfig: {
+      type: 'text'
+    },
+    value: '',
+    label: 'Телефон',
+    validation: {
+      required: true
+    },
+    valid: false,
+    touched: false
+  },
+  city: {
+    elementType: 'input',
+    elementConfig: {
+      type: 'text'
+    },
+    value: '',
+    label: 'Город',
+    validation: {
+      required: true
+    },
+    valid: false,
+    touched: false
+  },
+  np: {
+    elementType: 'input',
+    elementConfig: {
+      type: 'text'
+    },
+    value: '',
+    label: '№ отделения НП',
+    validation: {
+      required: true
+    },
+    valid: false,
+    touched: false
+  },
+  message: {
+    elementType: 'textarea',
+    elementConfig: {
+      type: 'text'
+    },
+    value: '',
+    label: 'Сообщение',
+    validation: {
+      required: false
+    },
+    valid: true,
+    touched: false
+  }
+};
+
 class ContactData extends Component {
   state = {
-    orderForm: {
-      name: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text'
-        },
-        value: '',
-        label: 'Имя'
-      },
-      email: {
-        elementType: 'email',
-        elementConfig: {
-          type: 'email'
-        },
-        value: '',
-        label: 'Email'
-      },
-      phone: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text'
-        },
-        value: '',
-        label: 'Телефон'
-      },
-      city: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text'
-        },
-        value: '',
-        label: 'Город'
-      },
-      np: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text'
-        },
-        value: '',
-        label: '№ отделения НП'
-      },
-      message: {
-        elementType: 'textarea',
-        elementConfig: {
-          type: 'text'
-        },
-        value: '',
-        label: 'Сообщение'
-      }
-    },
+    orderForm: data,
+    formIsValid: false,
     loading: false
   };
 
@@ -83,6 +117,29 @@ class ContactData extends Component {
       });
   };
 
+  checkValidity(value, rules) {
+    let isValid = true;
+    if (!rules) {
+      return true;
+    }
+
+    if (rules.required) {
+      isValid = value.trim !== '' && isValid;
+    }
+
+    if (rules.isEmail) {
+      const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+      isValid = pattern.test(value) && isValid;
+    }
+
+    if (rules.isNumeric) {
+      const pattern = /^\d+$/;
+      isValid = pattern.test(value) && isValid;
+    }
+
+    return isValid;
+  }
+
   inputChangedHandler = (event, inputIdentifier) => {
     // copy the origin form for immutability
     const updatedOrderForm = {
@@ -94,8 +151,17 @@ class ContactData extends Component {
     };
 
     updatedFormElement.value = event.target.value;
+    updatedFormElement.valid = this.checkValidity(
+      updatedFormElement.value,
+      updatedFormElement.validation
+    );
+    updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier] = updatedFormElement;
-    this.setState({ orderForm: updatedOrderForm });
+    let formIsValid = true;
+    for (let inputIdentifier in updatedOrderForm) {
+      formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+    }
+    this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   };
 
   render() {
@@ -116,11 +182,16 @@ class ContactData extends Component {
             value={formElement.config.value}
             label={formElement.config.label}
             id={formElement.id}
+            invalid={!formElement.config.valid}
+            shouldValidate={formElement.config.validation}
+            touched={formElement.config.touched}
             change={e => this.inputChangedHandler(e, formElement.id)}
           />
         )}
 
-        <button className="data-form__btn">Заказать</button>
+        <button className="data-form__btn" disabled={!this.state.formIsValid}>
+          Заказать
+        </button>
       </form>
     );
 

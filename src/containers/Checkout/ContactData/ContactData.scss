@@ -3,52 +3,6 @@
   max-width: 800px;
   margin: 60px auto;
 
-  &__group {
-    display: flex;
-  }
-
-  &__name,
-  &__input {
-    margin: 0 auto 20px;
-    padding: 10px;
-    line-height: 26px;
-    background-color: #fff;
-  }
-
-  &__name {
-    width: 40%;
-    vertical-align: middle;
-    text-align: right;
-    border-left: 3px solid #d5dfc6;
-
-    &.two {
-      border-left: 3px solid #dab6c8;
-    }
-    &.three {
-      border-left: 3px solid #a6dcee;
-    }
-    &.four {
-      border-left: 3px solid #5389a6;
-    }
-    &.five {
-      border-left: 3px solid #8fa08e;
-    }
-  }
-
-  &__input {
-    width: 60%;
-    background-color: #fafafa;
-    border: none;
-
-    &:hover {
-      background-color: #e0e0e0;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-
   &__btn {
     float: right;
     min-width: 130px;
@@ -58,5 +12,12 @@
     background-color: #f5c5d1;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: .3;
+      color: #fff;
+      cursor: not-allowed;
+    }
   }
 }
