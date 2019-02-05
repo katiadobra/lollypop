@@ -1,0 +1,66 @@
+.input-group {
+  display: flex;
+  margin: 0 auto 20px;
+  border-left: 3px solid #d5dfc6;
+
+  &__label,
+  &__input {
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 26px;
+    background-color: #fff;
+  }
+
+  &__label {
+    width: 40%;
+    vertical-align: middle;
+    text-align: right;
+    // border-left: 3px solid #d5dfc6;
+
+    &.two {
+      border-left: 3px solid #dab6c8;
+    }
+    &.three {
+      border-left: 3px solid #a6dcee;
+    }
+    &.four {
+      border-left: 3px solid #5389a6;
+    }
+    &.five {
+      border-left: 3px solid #8fa08e;
+    }
+  }
+
+  &__input {
+    width: 60%;
+    background-color: #fafafa;
+    border: none;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:nth-child(2n) {
+    border-left: 3px solid #dab6c8;
+  }
+
+  &:nth-child(3n) {
+    border-left: 3px solid #a6dcee;
+  }
+  &:nth-child(4n) {
+    border-left: 3px solid #5389a6;
+  }
+
+  &:nth-child(5n) {
+    border-left: 3px solid #8fa08e;
+  }
+
+  &:nth-child(6n) {
+    border-left: 3px solid #f9e3a0;
+  }
+}
