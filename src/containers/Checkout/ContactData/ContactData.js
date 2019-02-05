@@ -1,15 +1,61 @@
 import React, { Component } from 'react';
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios.orders';
 import './ContactData.scss';
 
+import Spinner from '../../../components/UI/Spinner/Spinner';
+import Input from '../../../components/UI/Input/Input';
+
 class ContactData extends Component {
   state = {
-    name: '',
-    email: '',
-    address: {
-      street: '',
-      postalCode: ''
+    orderForm: {
+      name: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text'
+        },
+        value: '',
+        label: 'Имя'
+      },
+      email: {
+        elementType: 'email',
+        elementConfig: {
+          type: 'email'
+        },
+        value: '',
+        label: 'Email'
+      },
+      phone: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text'
+        },
+        value: '',
+        label: 'Телефон'
+      },
+      city: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text'
+        },
+        value: '',
+        label: 'Город'
+      },
+      np: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text'
+        },
+        value: '',
+        label: '№ отделения НП'
+      },
+      message: {
+        elementType: 'textarea',
+        elementConfig: {
+          type: 'text'
+        },
+        value: '',
+        label: 'Сообщение'
+      }
     },
     loading: false
   };
@@ -17,19 +63,14 @@ class ContactData extends Component {
   orderHandler = event => {
     event.preventDefault();
     this.setState({ loading: true });
+    const formData = {};
+    for (let formElementIdentifier in this.state.orderForm) {
+      formData[formElementIdentifier] = this.state.orderForm[
+        formElementIdentifier
+      ].value;
+    }
     const order = {
-      // ingredients: this.props.ingredients,
-      // price: this.props.price,
-      customer: {
-        name: 'Max Schwarzmüller',
-        address: {
-          street: 'Teststreet 1',
-          zipCode: '41351',
-          country: 'Germany'
-        },
-        email: 'test@test.com'
-      },
-      deliveryMethod: 'fastest'
+      orderData: formData
     };
     axios
       .post('/orders.json', order)
@@ -42,37 +83,44 @@ class ContactData extends Component {
       });
   };
 
+  inputChangedHandler = (event, inputIdentifier) => {
+    // copy the origin form for immutability
+    const updatedOrderForm = {
+      ...this.state.orderForm
+    };
+    // clone deeply level of the origin form
+    const updatedFormElement = {
+      ...updatedOrderForm[inputIdentifier]
+    };
+
+    updatedFormElement.value = event.target.value;
+    updatedOrderForm[inputIdentifier] = updatedFormElement;
+    this.setState({ orderForm: updatedOrderForm });
+  };
+
   render() {
+    const formElementsArray = [];
+    for (let key in this.state.orderForm) {
+      formElementsArray.push({
+        id: key,
+        config: this.state.orderForm[key]
+      });
+    }
     let form = (
-      <form className="data-form">
-        <div className="data-form__group">
-          <div className="data-form__name">Имя</div>
-          <input className="data-form__input" type="text" name="name" />
-        </div>
-        <div className="data-form__group">
-          <div className="data-form__name two">E-mail*</div>
-          <input
-            className="data-form__input"
-            type="email"
-            name="email"
-            required
+      <form className="data-form" onSubmit={this.orderHandler}>
+        {formElementsArray.map(formElement =>
+          <Input
+            key={formElement.id}
+            elementType={formElement.config.elementType}
+            elementConfig={formElement.config.elementConfig}
+            value={formElement.config.value}
+            label={formElement.config.label}
+            id={formElement.id}
+            change={e => this.inputChangedHandler(e, formElement.id)}
           />
-        </div>
-        <div className="data-form__group">
-          <div className="data-form__name three">Телефон</div>
-          <input className="data-form__input" type="text" name="phone" />
-        </div>
-        <div className="data-form__group">
-          <div className="data-form__name four">Адрес</div>
-          <input className="data-form__input" type="text" name="street" />
-        </div>
-        <div className="data-form__group">
-          <div className="data-form__name five">Сообщение</div>
-          <input className="data-form__input" type="text" name="message" />
-        </div>
-        <button className="data-form__btn" clicked={this.orderHandler}>
-          Заказать
-        </button>
+        )}
+
+        <button className="data-form__btn">Заказать</button>
       </form>
     );
 
