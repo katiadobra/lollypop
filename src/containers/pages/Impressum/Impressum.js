@@ -1,13 +1,14 @@
 import React from 'react';
 import './Impressum.scss';
-import { Link } from 'react-router-dom';
 
 const impressum = () => {
   return (
     <section className="impressum">
       <h1 className="page-title">Контакты</h1>
       <div className="impressum__btn-wrap">
-        <button>Написать нам</button>
+        <a class="btn" href="mailto:lolly.pp.ua@gmail.com">
+          Написать нам
+        </a>
       </div>
 
       <p>

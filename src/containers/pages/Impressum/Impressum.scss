@@ -11,8 +11,10 @@
   &__btn-wrap {
     text-align: center;
 
-    button {
-      min-width: 130px;
+    button,
+    .btn {
+      display: inline-block;
+      width: 150px;
       margin: 0 auto 30px;
       padding: .8rem;
       border: none;
@@ -20,6 +22,8 @@
       background-color: #f5c5d1;
       text-align: center;
       text-transform: uppercase;
+      text-decoration: none;
+      font-size: 12px;
     }
   }
 
