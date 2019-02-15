@@ -4,7 +4,7 @@ $break-small: 700px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 195px;
+  width: 270px;
   height: 100%;
 
   color: #5a5a5a;
@@ -28,6 +28,9 @@ $break-small: 700px;
   &.right {
     right: 0;
     left: auto;
+    box-shadow: inset 5px 0 8px #eee;
+    border-left: none;
+    border-right: 1px solid #ebebeb;
 
     &.close {
       transform: translate(100%);
