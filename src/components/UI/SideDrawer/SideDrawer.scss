@@ -37,12 +37,6 @@ $break-small: 700px;
     }
   }
 
-  &:not(.order) {
-    @media screen and (min-width: $break-small) {
-      display: none;
-    }
-  }
-
   &__header {
     padding: 10px 0;
     border-bottom: 1px solid #d8d8d8;

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import SideDrawer from '../../components/UI/SideDrawer/SideDrawer';
+import Nav from '../../components/Navigation/NavigationItems/NavigationItems';
+import Logo from '../../components/Logo/Logo';
+// import OrderSummary from '../../components/Order/OrderSummary/OrderSummary';
 
 class Layout extends Component {
   state = {
-    showSideDraw: false
+    showSideDraw: false,
+    showSideCart: false
   };
 
   sideDrawerClosedHandler = () => {
@@ -18,13 +22,34 @@ class Layout extends Component {
     });
   };
 
+  sideCartCloseHandler = () => {
+    this.setState({ showSideCart: false });
+  };
+
+  sideCartToggleHandler = () => {
+    this.setState(prevState => {
+      return { showSideCart: !prevState.showSideCart };
+    });
+  };
+
   render() {
     const { showSideDraw } = this.state;
 
     return (
       <Aux>
-        <Toolbar open={this.sideDrawerToggleHandler} />
-        <SideDrawer open={showSideDraw} closed={this.sideDrawerClosedHandler} />
+        <Toolbar
+          open={this.sideDrawerToggleHandler}
+          onSideCartOpen={this.sideCartToggleHandler}
+        />
+        <SideDrawer
+          show={showSideDraw}
+          closed={this.sideDrawerClosedHandler}
+          caption="Меню"
+        >
+          <Logo />
+          <Nav />
+        </SideDrawer>
+        {/* <OrderSummary open={showSideCart} closed={this.sideCartCloseHandler} /> */}
 
         <main className="main">
           {this.props.children}
