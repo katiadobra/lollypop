@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidecart.scss';
 
 const sidecart = props => {
-  const { data, total_items, total, packaging, btnClickHandler } = props;
+  const { data, total_items, total, packaging, onSideCartOpen } = props;
 
   return (
     <div className="sidecart">
@@ -54,7 +54,7 @@ const sidecart = props => {
                   {(total + packaging).toFixed(2)} грн.
                 </div>
               </div>
-              <button className="sidecart__order_btn" onClick={btnClickHandler}>
+              <button className="sidecart__order_btn" onClick={onSideCartOpen}>
                 заказать
               </button>
             </div>

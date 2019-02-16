@@ -6,7 +6,7 @@ const impressum = () => {
     <section className="impressum">
       <h1 className="page-title">Контакты</h1>
       <div className="impressum__btn-wrap">
-        <a class="btn" href="mailto:lolly.pp.ua@gmail.com">
+        <a className="btn" href="mailto:lolly.pp.ua@gmail.com">
           Написать нам
         </a>
       </div>
