@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from '../../axios.orders';
+// import axios from '../../axios.orders';
 import './LollypopList.scss';
+import data from '../../assets/data.json';
 
 import Aux from '../../hoc/Aux';
-// import Spinner from '../../components/UI/Spinner/Spinner';
 import LollypopItem from '../../components/Lollypop/LollypopItem/LollypopItem';
 import OrderSummary from '../../components/Order/OrderSummary/OrderSummary';
 import Sidecart from '../../components/Lollypop/Sidecart/Sidecart';
@@ -11,22 +11,22 @@ import SideDrawer from '../../components/UI/SideDrawer/SideDrawer';
 
 class LollypopList extends Component {
   state = {
-    items: [],
+    items: data,
     total_items: 0,
     totalPrice: 0,
-    packaging: 1.99,
+    packaging: 4.99,
     thank_popup: false,
     loading: false,
     error: false,
     showSideCart: false
   };
 
-  componentDidMount() {
-    axios
-      .get('https://api.myjson.com/bins/lcjhi.json')
-      .then(res => this.setState({ items: res.data }))
-      .catch(error => this.setState({ error: true }));
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get('https://api.myjson.com/bins/lcjhi.json')
+  //     .then(res => this.setState({ items: res.data }))
+  //     .catch(error => this.setState({ error: true }));
+  // }
 
   addToCartHandler = (id, cost) => {
     this.state.items.map(item => {
@@ -66,10 +66,6 @@ class LollypopList extends Component {
     });
   };
 
-  reload = () => {
-    window.location.href = window.location.href;
-  };
-
   orderBtnHandler = () => {
     this.props.history.push('./checkout');
   };
@@ -81,17 +77,22 @@ class LollypopList extends Component {
   };
 
   purchaseContinueHandler = () => {
-    const queryParams = [];
-    for (let i in this.state.items) {
-      queryParams.push(
-        encodeURIComponent(i) + '=' + encodeURIComponent(this.state.items[i].id)
-      );
-    }
-    queryParams.push('price=' + this.state.totalPrice);
-    const queryString = queryParams.join('&');
+    let str = [];
+    let serialize = function(obj) {
+      for (var p in obj)
+        if (obj.hasOwnProperty(p)) {
+          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+        }
+      return str;
+    };
+
+    serialize(this.state.items);
+    str.push('price=' + this.state.totalPrice);
+    console.log('queryParams ', str);
+    str = str.join('&');
     this.props.history.push({
       pathname: '/checkout',
-      search: '?' + queryString
+      search: '?' + str
     });
   };
 
