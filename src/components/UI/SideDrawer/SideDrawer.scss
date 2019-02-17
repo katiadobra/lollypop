@@ -4,7 +4,7 @@ $break-small: 700px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 195px;
+  width: 270px;
   height: 100%;
 
   color: #5a5a5a;
@@ -25,8 +25,16 @@ $break-small: 700px;
     transform: translate(-100%);
   }
 
-  @media screen and (min-width: $break-small) {
-    display: none;
+  &.right {
+    right: 0;
+    left: auto;
+    box-shadow: inset 5px 0 8px #eee;
+    border-left: none;
+    border-right: 1px solid #ebebeb;
+
+    &.close {
+      transform: translate(100%);
+    }
   }
 
   &__header {
@@ -39,8 +47,11 @@ $break-small: 700px;
   position: relative;
   float: right;
   padding-right: 10px;
+  border: none;
   color: #5a5a5a;
+  background-color: transparent;
   font-weight: 100;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

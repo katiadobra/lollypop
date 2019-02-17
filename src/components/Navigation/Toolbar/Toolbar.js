@@ -7,7 +7,7 @@ import Teaser from '../../Lollypop/Teaser/Teaser';
 import './Toolbar.scss';
 
 const toolbar = props => {
-  const { open, total_items } = props;
+  const { open, total_items, onSideCartOpen } = props;
 
   return (
     <header className="page-header">
@@ -27,7 +27,7 @@ const toolbar = props => {
         <NavigationItems />
       </nav>
 
-      <button className="popup_btn">
+      <button className="sidecart_btn" onClick={onSideCartOpen}>
         <img src={Cart} alt="" />
         {/* <svg viewBox="0 0 19 19" id="icon-basket" width="100%" height="100%">
           <path d="M6 4v1H3v14h13V5h-3V4l-.036-.5C12.79 1.73 11.697 0 9.5 0S6.21 1.73 6.036 3.5M7 4.5V4c0-1.445.782-3 2.5-3S12 2.555 12 4v1H7zM15 18H4V6h2v3h1V6h5v3h1V6h2z" />

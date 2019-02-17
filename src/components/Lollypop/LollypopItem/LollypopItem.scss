@@ -6,7 +6,7 @@ $break-md: 1281px;
   position: relative;
   display: inline-block;
   width: calc(25% - 2rem);
-  margin: 1rem;
+  margin: 0.8rem;
 
   background-color: #fff;
   color: #5a5a5a;
@@ -14,11 +14,14 @@ $break-md: 1281px;
   overflow: hidden;
 
   &__descr {
-    padding: 1rem;
+    padding: 0.5rem;
+
+    @media screen and (min-width: $break-small) {
+      padding: 1rem;
+    }
   }
 
   &__ttl {
-    min-height: 42px;
     margin-bottom: 5px;
     text-transform: uppercase;
     font-weight: 300;

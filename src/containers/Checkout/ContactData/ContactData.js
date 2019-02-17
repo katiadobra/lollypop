@@ -27,7 +27,7 @@ let data = {
     value: '',
     label: 'Email',
     validation: {
-      required: true,
+      required: false,
       isEmail: true
     },
     valid: false,
@@ -104,7 +104,9 @@ class ContactData extends Component {
       ].value;
     }
     const order = {
-      orderData: formData
+      orderData: formData,
+      price: this.props.price,
+      items: this.props.items
     };
     axios
       .post('/orders.json', order)
@@ -201,7 +203,7 @@ class ContactData extends Component {
 
     return (
       <div className="contact-data">
-        <h4>Куда отправить заказ</h4>
+        <h4>Куда отправить заказ?</h4>
         {form}
       </div>
     );

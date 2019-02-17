@@ -1,7 +1,15 @@
+$break-small: 700px;
+$break-large: 900px;
+$break-md: 1281px;
+
 .data-form {
   width: auto;
   max-width: 800px;
-  margin: 60px auto;
+  margin: 30px 10px;
+
+  @media screen and (min-width: $break-small) {
+    margin: 60px auto;
+  }
 
   &__btn {
     float: right;

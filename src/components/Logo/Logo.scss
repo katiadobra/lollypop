@@ -8,4 +8,8 @@ $break-small: 700px;
     max-width: 130px;
     padding: 10px;
   }
+
+  .side-drawer & {
+    display: block;
+  }
 }
