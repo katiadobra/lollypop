@@ -1,14 +1,24 @@
+$break-small: 700px;
+
 .input-group {
   display: flex;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   border-left: 3px solid #d5dfc6;
+
+  @media screen and (min-width: $break-small) {
+    margin-bottom: 20px;
+  }
 
   &__label,
   &__input {
     margin: 0 auto;
-    padding: 10px;
+    padding: 8px;
     line-height: 26px;
     background-color: #fff;
+
+    @media screen and (min-width: $break-small) {
+      padding: 10px;
+    }
   }
 
   &__label {
@@ -19,7 +29,7 @@
 
   &__input {
     width: 60%;
-    background-color: #fafafa;
+    background-color: #f2f2f2;
     border: none;
 
     &:hover {
