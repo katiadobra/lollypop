@@ -12,7 +12,7 @@ import SideDrawer from '../../components/UI/SideDrawer/SideDrawer';
 
 class LollypopList extends Component {
   state = {
-    packaging: 4.99,
+    packaging: 0,
     thank_popup: false,
     loading: false,
     error: false,
@@ -42,23 +42,7 @@ class LollypopList extends Component {
   };
 
   purchaseContinueHandler = () => {
-    let str = [];
-    let serialize = function(obj) {
-      for (var p in obj)
-        if (obj.hasOwnProperty(p)) {
-          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
-        }
-      return str;
-    };
-
-    serialize(this.state.items);
-    str.push('price=' + this.state.totalPrice);
-    console.log('queryParams ', str);
-    str = str.join('&');
-    this.props.history.push({
-      pathname: '/checkout',
-      search: '?' + str
-    });
+    this.props.history.push('/checkout');
   };
 
   render() {
