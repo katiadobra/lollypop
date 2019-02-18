@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import './LollypopItem.scss';
 
 class LollypopItem extends Component {
-  render(props) {
-    let item = this.props.item;
-    let addToCart = this.props.addToCart;
-    let removeFromCart = this.props.removeFromCart;
+  render() {
+    const { item, addToCart, removeFromCart } = this.props;
 
     return (
       <div className="llp-item item-containe">
@@ -26,6 +24,7 @@ class LollypopItem extends Component {
           </button>
           <button
             className="btn btn--delete"
+            disabled={!item.qty}
             onClick={() => removeFromCart(item.id, item.cost)}
           >
             Удалить

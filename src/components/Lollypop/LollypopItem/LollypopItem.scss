@@ -109,12 +109,6 @@ $break-md: 1281px;
     background: #3b3b3b;
   }
 
-  &:disabled {
-    background: #ddd;
-    color: #ee3939;
-    cursor: not-allowed;
-  }
-
   &--delete {
     background-color: #fff;
     color: #3b3b3b;
@@ -122,6 +116,13 @@ $break-md: 1281px;
     &:hover {
       background-color: #fff;
       color: #e1abb9;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: #fff;
+      color: #cecece;
+      cursor: not-allowed;
     }
   }
 }

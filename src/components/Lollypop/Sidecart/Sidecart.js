@@ -6,7 +6,7 @@ const sidecart = props => {
 
   return (
     <div className="sidecart">
-      {total_items !== 0
+      {total_items > 0
         ? <div className="sidecart__wrap">
             <div className="sidecart__content">
               <h2 className="sidecart__caption">Корзина</h2>

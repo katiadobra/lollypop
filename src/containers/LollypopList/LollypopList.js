@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions';
 // import axios from '../../axios.orders';
 import './LollypopList.scss';
-import data from '../../assets/data.json';
 
 import Aux from '../../hoc/Aux';
 import LollypopItem from '../../components/Lollypop/LollypopItem/LollypopItem';
@@ -11,60 +12,24 @@ import SideDrawer from '../../components/UI/SideDrawer/SideDrawer';
 
 class LollypopList extends Component {
   state = {
-    items: data,
-    total_items: 0,
-    totalPrice: 0,
-    packaging: 4.99,
+    packaging: 0,
     thank_popup: false,
     loading: false,
     error: false,
     showSideCart: false
   };
 
-  // componentDidMount() {
-  //   axios
-  //     .get('https://api.myjson.com/bins/lcjhi.json')
-  //     .then(res => this.setState({ items: res.data }))
-  //     .catch(error => this.setState({ error: true }));
-  // }
+  // popup = () => {
+  //   this.setState({
+  //     popup: !this.state.popup
+  //   });
+  // };
 
-  addToCartHandler = (id, cost) => {
-    this.state.items.map(item => {
-      if (item.id === id) {
-        item.qty += 1;
-      }
-    });
-    this.setState({
-      total_items: this.state.total_items + 1,
-      totalPrice: this.state.totalPrice + cost
-    });
-  };
-
-  removeFromCartHandler = (id, cost) => {
-    this.state.items.map(item => {
-      if (item.id === id) {
-        if (item.qty !== 0) {
-          item.qty -= 1;
-          this.setState({
-            total_items: this.state.total_items - 1,
-            total: this.state.total - cost
-          });
-        }
-      }
-    });
-  };
-
-  popup = () => {
-    this.setState({
-      popup: !this.state.popup
-    });
-  };
-
-  thank_popup = () => {
-    this.setState({
-      thank_popup: !this.state.thank_popup
-    });
-  };
+  // thank_popup = () => {
+  //   this.setState({
+  //     thank_popup: !this.state.thank_popup
+  //   });
+  // };
 
   orderBtnHandler = () => {
     this.props.history.push('./checkout');
@@ -77,33 +42,18 @@ class LollypopList extends Component {
   };
 
   purchaseContinueHandler = () => {
-    let str = [];
-    let serialize = function(obj) {
-      for (var p in obj)
-        if (obj.hasOwnProperty(p)) {
-          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
-        }
-      return str;
-    };
-
-    serialize(this.state.items);
-    str.push('price=' + this.state.totalPrice);
-    console.log('queryParams ', str);
-    str = str.join('&');
-    this.props.history.push({
-      pathname: '/checkout',
-      search: '?' + str
-    });
+    this.props.history.push('/checkout');
   };
 
   render() {
+    const { packaging, showSideCart } = this.state;
     const {
-      items,
+      itms,
       total_items,
       totalPrice,
-      packaging,
-      showSideCart
-    } = this.state;
+      onItemAdd,
+      onItemRemove
+    } = this.props;
 
     return (
       <Aux>
@@ -114,27 +64,29 @@ class LollypopList extends Component {
           caption="Корзина"
         >
           <OrderSummary
-            data={items}
+            data={itms}
             price={totalPrice}
             packaging={packaging}
             purchaseContinued={this.purchaseContinueHandler}
             onOrderBtnClick={this.orderBtnHandler}
           />
         </SideDrawer>
+
         <div className="list-container">
-          {items.map((item, id) => {
+          {itms.map((item, id) => {
             return (
               <LollypopItem
                 key={id}
                 item={item}
-                addToCart={this.addToCartHandler}
-                removeFromCart={this.removeFromCartHandler}
+                addToCart={() => onItemAdd(item)}
+                removeFromCart={() => onItemRemove(item)}
               />
             );
           })}
         </div>
+
         <Sidecart
-          data={items}
+          data={itms}
           total_items={total_items}
           total={totalPrice}
           packaging={packaging}
@@ -147,4 +99,19 @@ class LollypopList extends Component {
   }
 }
 
-export default LollypopList;
+const mapStateToProps = state => {
+  return {
+    itms: state.items,
+    totalPrice: state.totalPrice,
+    total_items: state.total_items
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onItemAdd: itm => dispatch({ type: actionTypes.ADD_TO_CART, itm }),
+    onItemRemove: itm => dispatch({ type: actionTypes.REMOVE_FROM_CART, itm })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LollypopList);

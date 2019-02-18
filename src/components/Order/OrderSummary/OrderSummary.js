@@ -79,17 +79,7 @@ class OrderSummary extends Component {
         </div>
       </Aux>
     );
-
-    // console.log('props', props);
-    // console.log('props.open', props.open);
-    // console.log('props.price', props.price);
-    // console.log('props.data', props.data);
-    // let data = [];
-    // if (props.data) {
-    //   data = data.filter(item => item.qty !== 0);
-    //   console.log('if orderSummary data', data);
   }
-  // console.log('orderSummary data', data);
 }
 
 export default OrderSummary;
