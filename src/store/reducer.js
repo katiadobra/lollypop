@@ -1,8 +1,10 @@
 import * as actionTypes from './actions';
+import data from '../assets/data.json';
 
 const initialState = {
+  items: data,
   total_items: null,
-  totalPrice: 4
+  totalPrice: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,22 +12,29 @@ const reducer = (state = initialState, action) => {
     case actionTypes.ADD_TO_CART:
       return {
         ...state,
-        total_items: {
-          ...state.total_items,
-          [action.total_items]: state.total_items + 1
-          // [action.items.id]: state.total_items[action.itemId] + 1
-        }
-        // totalPrice: state.totalPrice + state.items[action.itemId]
+        total_items: state.total_items + 1,
+        totalPrice: state.totalPrice + action.itm.cost,
+        items: [
+          ...state.items,
+          Object.assign({}, action.itm, {
+            qty: action.itm.qty + 1
+          })
+        ]
       };
+
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
-        total_items: {
-          ...state.total_items,
-          [action.total_items]: state.total_items - 1
-          // [action.itemId]: state.total_items[action.itemId] - 1
-        }
+        total_items: state.total_items - 1,
+        totalPrice: state.totalPrice - action.itm.cost,
+        items: [
+          ...state.items,
+          Object.assign({}, action.itm, {
+            qty: action.itm.qty - 1
+          })
+        ]
       };
+
     default:
       return state;
   }
