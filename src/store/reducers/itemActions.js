@@ -1,5 +1,5 @@
-import * as actionTypes from './actions';
-import data from '../assets/data.json';
+import * as actionTypes from '../actions/constants';
+import data from '../../assets/data.json';
 
 const initialState = {
   items: data,
