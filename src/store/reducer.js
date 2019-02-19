@@ -3,7 +3,7 @@ import data from '../assets/data.json';
 
 const initialState = {
   items: data,
-  total_items: null,
+  total_items: 0,
   totalPrice: 0
 };
 
