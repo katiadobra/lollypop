@@ -53,6 +53,18 @@ $break-md: 1281px;
       overflow: auto;
       border: 5px solid #fff;
     }
+
+    & > .final_price {
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
   }
 }
 

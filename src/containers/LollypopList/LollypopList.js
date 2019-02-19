@@ -31,10 +31,6 @@ class LollypopList extends Component {
   //   });
   // };
 
-  orderBtnHandler = () => {
-    this.props.history.push('./checkout');
-  };
-
   sideCartToggleHandler = () => {
     this.setState(prevState => {
       return { showSideCart: !prevState.showSideCart };
@@ -68,7 +64,6 @@ class LollypopList extends Component {
             price={totalPrice}
             packaging={packaging}
             purchaseContinued={this.purchaseContinueHandler}
-            onOrderBtnClick={this.orderBtnHandler}
           />
         </SideDrawer>
 
