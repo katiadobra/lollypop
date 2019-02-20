@@ -37,6 +37,7 @@ class LollypopList extends Component {
   };
 
   purchaseContinueHandler = () => {
+    this.props.onInitPurchase();
     this.props.history.push('/checkout');
   };
 
@@ -104,7 +105,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onItemAdd: itm => dispatch(actions.addToCart(itm)),
-    onItemRemove: itm => dispatch(actions.removeFromCart(itm))
+    onItemRemove: itm => dispatch(actions.removeFromCart(itm)),
+    onInitPurchase: () => dispatch(actions.purchaseInit())
   };
 };
 

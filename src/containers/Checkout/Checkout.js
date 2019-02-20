@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './Checkout.scss';
 
+import './Checkout.scss';
 import ContactData from './ContactData/ContactData';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 
@@ -16,11 +16,11 @@ class Checkout extends Component {
   };
 
   render() {
-    const { itms } = this.props;
+    const { itms, purchased } = this.props;
 
     return (
       <div className="checkout">
-        {itms
+        {itms && !purchased
           ? <div>
               <CheckoutSummary
                 data={itms}
@@ -40,7 +40,9 @@ class Checkout extends Component {
 
 const mapStateToProps = state => {
   return {
-    itms: state.itemActions.items
+    itms: state.itemActions.items,
+    purchased: state.order.purchased
   };
 };
+
 export default connect(mapStateToProps)(Checkout);
