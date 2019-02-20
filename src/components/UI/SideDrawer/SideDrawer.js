@@ -3,7 +3,7 @@ import Backdrop from '../Backdrop/Backdrop';
 import Aux from '../../../hoc/Aux';
 import './SideDrawer.scss';
 
-class sideDrawer extends Component {
+class SideDrawer extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.show !== this.props.show;
   }
@@ -34,4 +34,4 @@ class sideDrawer extends Component {
   }
 }
 
-export default sideDrawer;
+export default SideDrawer;
