@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionTypes from '../../store/actions';
-// import axios from '../../axios.orders';
+import * as actions from '../../store/actions';
 import './LollypopList.scss';
 
 import Aux from '../../hoc/Aux';
@@ -96,16 +95,16 @@ class LollypopList extends Component {
 
 const mapStateToProps = state => {
   return {
-    itms: state.items,
-    totalPrice: state.totalPrice,
-    total_items: state.total_items
+    itms: state.itemActions.items,
+    totalPrice: state.itemActions.totalPrice,
+    total_items: state.itemActions.total_items
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onItemAdd: itm => dispatch({ type: actionTypes.ADD_TO_CART, itm }),
-    onItemRemove: itm => dispatch({ type: actionTypes.REMOVE_FROM_CART, itm })
+    onItemAdd: itm => dispatch(actions.addToCart(itm)),
+    onItemRemove: itm => dispatch(actions.removeFromCart(itm))
   };
 };
 

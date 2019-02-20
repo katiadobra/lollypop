@@ -44,7 +44,7 @@ class Toolbar extends Component {
 
 const mapStateToProps = state => {
   return {
-    total: state.total_items
+    total: state.itemActions.total_items
   };
 };
 
