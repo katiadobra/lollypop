@@ -1,10 +1,10 @@
 import * as actionTypes from '../actions/constants';
-import data from '../../assets/data.json';
 
 const initialState = {
-  items: data,
+  items: null,
   total_items: 0,
-  totalPrice: 0
+  totalPrice: 0,
+  error: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +35,19 @@ const reducer = (state = initialState, action) => {
         total_items: state.total_items - 1,
         totalPrice: state.totalPrice - action.itm.cost,
         items: updatedItemsForRemoving
+      };
+
+    case actionTypes.SET_ITEMS:
+      return {
+        ...state,
+        items: action.items,
+        error: false
+      };
+
+    case actionTypes.FETCH_ITEMS_FAILD:
+      return {
+        ...state,
+        error: true
       };
 
     default:
