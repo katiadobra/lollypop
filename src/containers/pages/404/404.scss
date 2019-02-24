@@ -1,0 +1,18 @@
+.not-found {
+  height: 100%;
+  display: flex;
+  background: url('../../../assets/img/giphy1.gif') 0 0;
+
+  &__ttl {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+
+  &__btn {
+    margin: 0;
+    padding: 1rem;
+    float: right;
+    min-width: 160px;
+  }
+}
