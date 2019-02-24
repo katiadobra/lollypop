@@ -1,3 +1,4 @@
 export { addToCart, removeFromCart, initItems } from './itemActions';
-export { purchase, purchaseInit } from // ,fetchOrders
-'./order';
+// ,fetchOrders
+export { purchase, purchaseInit } from './order';
+export { auth } from './auth';

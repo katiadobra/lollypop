@@ -1,0 +1,27 @@
+.auth {
+  height: 100%;
+  display: flex;
+  background: url('../../../assets/img/flamingo-bg2.jpg') 0 0;
+
+  &__ttl {
+    margin-bottom: 40px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.auth-form {
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
+
+  &__btn {
+    margin: 0;
+    padding: 1rem;
+    float: right;
+    min-width: 160px;
+  }
+}

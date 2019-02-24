@@ -11,6 +11,7 @@ const navigationItems = props =>
     <NavigationItem link="/delivery">Как заказать</NavigationItem>
     <NavigationItem link="/orders">Мои заказы</NavigationItem>
     <NavigationItem link="/impressum">Контакты</NavigationItem>
+    <NavigationItem link="/auth">Войти</NavigationItem>
   </ul>;
 
 const NavigationItem = props =>
