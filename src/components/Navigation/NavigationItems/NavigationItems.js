@@ -6,10 +6,7 @@ import './NavigationItems.scss';
 const navigationItems = props =>
   <ul className="main-nav">
     <NavigationItem link="/">Резинки и заколки</NavigationItem>
-    {/* <NavigationItem link="/scrunchy">Резинки</NavigationItem> */}
-    {/* <NavigationItem link="/afinka">Повязки</NavigationItem> */}
     <NavigationItem link="/delivery">Как заказать</NavigationItem>
-    <NavigationItem link="/orders">Мои заказы</NavigationItem>
     <NavigationItem link="/impressum">Контакты</NavigationItem>
   </ul>;
 
