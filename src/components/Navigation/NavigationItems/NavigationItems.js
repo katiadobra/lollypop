@@ -5,7 +5,7 @@ import './NavigationItems.scss';
 
 const navigationItems = props =>
   <ul className="main-nav">
-    <NavigationItem link="/">Резинки и заколки</NavigationItem>
+    <NavigationItem link="/">Каталог</NavigationItem>
     <NavigationItem link="/delivery">Как заказать</NavigationItem>
     <NavigationItem link="/impressum">Контакты</NavigationItem>
   </ul>;

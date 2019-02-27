@@ -2,30 +2,35 @@ $break-small: 700px;
 $break-large: 900px;
 $break-md: 1281px;
 
+.contact-data {
+  padding: 20px;
+  border-top: 1px solid #d8d8d8;
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  p {
+    display: block;
+    max-width: 490px;
+    margin: auto;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+
 .data-form {
   width: auto;
   max-width: 800px;
   margin: 30px 10px;
 
   @media screen and (min-width: $break-small) {
-    margin: 60px auto;
+    margin: 2rem auto;
   }
 
-  &__btn {
+  .btn {
     float: right;
-    min-width: 130px;
-    padding: .8rem;
-    border: none;
-    color: #5a5a5a;
-    background-color: #f5c5d1;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:disabled {
-      opacity: .3;
-      color: #fff;
-      cursor: not-allowed;
-    }
+    margin-bottom: 30px;
+    max-width: 130px;
   }
 }

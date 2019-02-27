@@ -19,11 +19,14 @@ class LollypopItem extends Component {
           <p className="llp-item__price">
             {item.cost.toFixed(2)} грн.
           </p>
-          <button className="btn" onClick={() => addToCart(item.id, item.cost)}>
+          <button
+            className="btn btn--primary btn--small"
+            onClick={() => addToCart(item.id, item.cost)}
+          >
             В корзину
           </button>
           <button
-            className="btn btn--delete"
+            className="btn btn--default btn--small"
             disabled={!item.qty}
             onClick={() => removeFromCart(item.id, item.cost)}
           >

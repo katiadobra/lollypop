@@ -188,7 +188,10 @@ class ContactData extends Component {
           />
         )}
 
-        <button className="data-form__btn" disabled={!this.state.formIsValid}>
+        <button
+          className="btn btn--secondary"
+          disabled={!this.state.formIsValid}
+        >
           Заказать
         </button>
       </form>
@@ -200,7 +203,10 @@ class ContactData extends Component {
 
     return (
       <div className="contact-data">
-        <h4>Куда отправить заказ?</h4>
+        <h3 className="page-title">Информация о доставке</h3>
+        <p>
+          Заполните, пожалуйста, поля формы, чтобы мы могли доставить Ваш заказ.
+        </p>
         {form}
       </div>
     );
