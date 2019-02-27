@@ -6,10 +6,13 @@ const OrderSummaryItem = props => {
   let OrderSummaryItem = props.item;
 
   return (
-    <div className="cart-item cart_item">
-      <img src={OrderSummaryItem.src} alt="" />
-      <span className="cart-item__info">
-        <div className="cart-item__ttl">
+    <div className="summary-item">
+      <div className="summary-item__img">
+        <img src={OrderSummaryItem.src} alt="" />
+      </div>
+
+      <div className="summary-item__info">
+        <div className="summary-item__ttl">
           {OrderSummaryItem.name} x {OrderSummaryItem.qty}
         </div>
         <div>
@@ -21,7 +24,7 @@ const OrderSummaryItem = props => {
           )}{' '}
           грн.
         </div>
-      </span>
+      </div>
     </div>
   );
 };
@@ -33,47 +36,42 @@ class OrderSummary extends Component {
 
     return (
       <Aux>
-        <div className="order">
-          <div className="cart">
-            <div className="cart_lef t">
-              {data
-                ? dataCopied.map((item, id) => {
-                    return (
-                      <div key={id}>
-                        <OrderSummaryItem item={item} />
-                      </div>
-                    );
-                  })
-                : null}
-            </div>
+        <div className="cart-previw">
+          <div className="cart-previw__block">
+            {data &&
+              dataCopied.map((item, id) => {
+                return <OrderSummaryItem key={id} item={item} />;
+              })}
           </div>
-          <div className="cart_righ t">
-            <div className="final_price">
-              <div className="cart_item">
-                <h3>Цена товаров:</h3>
-                <h3>
+          <div className="cart-previw__block">
+            <div className="final-price">
+              <div className="final-price__row">
+                <b>Цена товаров:</b>
+                <div>
                   {price.toFixed(2)} грн.
-                </h3>
+                </div>
               </div>
-              <div className="cart_item">
-                <h3>Доставка:</h3>
-                <h3>Free</h3>
+              <div className="final-price__row">
+                <b>Доставка:</b>
+                <div>Free</div>
               </div>
-              <div className="cart_item">
-                <h3>Упаковка:</h3>
-                <h3>
+              <div className="final-price__row">
+                <b>Упаковка:</b>
+                <div>
                   {packaging.toFixed(2)} грн.
-                </h3>
+                </div>
               </div>
             </div>
-            <div className="final_price">
-              <h3>Общая стоимость:</h3>
-              <h3>
-                {(price + packaging).toFixed(2)} грн.
-              </h3>
+            <div className="final-price">
+              <div className="final-price__row">
+                <b>Всего:</b>
+                <b>
+                  {(price + packaging).toFixed(2)} грн.
+                </b>
+              </div>
             </div>
-            <button className="order_btn" onClick={purchaseContinued}>
-              К оплате
+            <button className="btn btn--secondary" onClick={purchaseContinued}>
+              Оформить заказ
             </button>
           </div>
         </div>
