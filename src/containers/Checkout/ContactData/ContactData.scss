@@ -3,7 +3,6 @@ $break-large: 900px;
 $break-md: 1281px;
 
 .contact-data {
-  padding: 20px;
   border-top: 1px solid #d8d8d8;
 
   .page-title {
@@ -22,7 +21,7 @@ $break-md: 1281px;
 .data-form {
   width: auto;
   max-width: 800px;
-  margin: 30px 10px;
+  margin: 0;
 
   @media screen and (min-width: $break-small) {
     margin: 2rem auto;

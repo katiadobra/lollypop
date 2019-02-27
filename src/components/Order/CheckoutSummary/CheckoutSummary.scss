@@ -14,6 +14,7 @@ $break-small: 700px;
 
     @media screen and (min-width: $break-small) {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.5rem;
