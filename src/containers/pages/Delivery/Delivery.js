@@ -7,20 +7,20 @@ const delivery = () => {
       <nav>
         <ul className="delivery-nav">
           <li>
-            <a href="#order">Заказ</a>
+            <a href="#delivery-order">Заказ</a>
           </li>
           <li>
-            <a href="#payment">Оплата</a>
+            <a href="#delivery-payment">Оплата</a>
           </li>
           <li>
-            <a href="#delivery">Доставка</a>
+            <a href="#delivery-delivery">Доставка</a>
           </li>
           <li>
-            <a href="#happyclient">Программа "Счастливый клиент".</a>
+            <a href="#delivery-happyclient">Программа "Счастливый клиент".</a>
           </li>
         </ul>
       </nav>
-      <section id="order">
+      <section id="delivery-order">
         <h1 className="page-title">Заказ</h1>
         <h3>Для оформления заказа понадобятся:</h3>
         <ul>
@@ -45,7 +45,7 @@ const delivery = () => {
         </p>
       </section>
 
-      <section id="payment">
+      <section id="delivery-payment">
         <h1 className="page-title">Оплата</h1>
         <div>
           <p>100% предоплата.</p>
@@ -57,7 +57,7 @@ const delivery = () => {
         </div>
       </section>
 
-      <section id="delivery">
+      <section id="delivery-delivery">
         <h1 className="page-title">Доставка</h1>
         <div>
           <p>
@@ -83,7 +83,7 @@ const delivery = () => {
         </div>
       </section>
 
-      <section id="happyclient">
+      <section id="delivery-happyclient">
         <h1 className="page-title">Программа "Счастливый клиент".</h1>
         <div>
           <p>

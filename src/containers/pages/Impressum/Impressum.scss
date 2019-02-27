@@ -1,8 +1,15 @@
+$break-small: 700px;
+
 .impressum {
   max-width: 700px;
-  margin: 30px auto;
+  margin: 20px auto;
+  padding: 0 20px;
   font-size: 15px;
   line-height: 1.8em;
+
+  @media screen and (min-width: $break-small) {
+    margin: 30px auto;
+  }
 
   &__caption {
     color: #e1abb9;
@@ -11,19 +18,18 @@
   &__btn-wrap {
     text-align: center;
 
-    button,
     .btn {
       display: inline-block;
       width: 150px;
-      margin: 0 auto 30px;
-      padding: .8rem;
-      border: none;
-      color: #5a5a5a;
-      background-color: #f5c5d1;
-      text-align: center;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 12px;
+
+      &:hover,
+      &:focus {
+        color: #3b3b3b;
+        background-color: #efbeca;
+      }
     }
   }
 
