@@ -1,6 +1,21 @@
 import React from 'react';
 import './Sidecart.scss';
 
+const CartItem = props => {
+  const { item } = props;
+
+  return (
+    <div className="sidecart-item">
+      <div>
+        {item.name} ({item.qty})
+      </div>
+      <div>
+        {(item.cost * item.qty).toFixed(2)}
+      </div>
+    </div>
+  );
+};
+
 const sidecart = props => {
   const { data, total_items, total, packaging, onSideCartOpen } = props;
 
@@ -13,48 +28,39 @@ const sidecart = props => {
               {data.map((item, id) => {
                 return (
                   <div key={id}>
-                    {item.qty !== 0
-                      ? <div key={id} className="cart_item">
-                          <span>
-                            <h3>
-                              {item.name} ({item.qty})
-                            </h3>
-                            <h3>
-                              {(item.cost * item.qty).toFixed(2)}
-                            </h3>
-                          </span>
-                        </div>
-                      : null}
+                    {item.qty !== 0 && <CartItem item={item} />}
                   </div>
                 );
               })}
             </div>
-            <div className="final_price">
-              <div className="cart_item final_price__row">
-                <h3>Цена:</h3>
+            <div className="final-price">
+              <div className="final_price__row">
+                <b>Цена:</b>
                 <div>
                   {total.toFixed(2)} грн.
                 </div>
               </div>
-              <div className="cart_item final_price__row">
-                <h3>Доставка:</h3>
+              <div className="final_price__row">
+                <b>Доставка:</b>
                 <div>Бесплатно</div>
               </div>
-              <div className="cart_item final_price__row">
-                <h3>Упаковка:</h3>
+              <div className="final_price__row">
+                <b>Упаковка:</b>
                 <div>
                   {packaging.toFixed(2)} грн.
                 </div>
               </div>
             </div>
-            <div className="final_price final_price__row">
-              <h3>Общая стоимость:</h3>
-              <div>
-                {(total + packaging).toFixed(2)} грн.
+            <div className="final-price">
+              <div className="final_price__row">
+                <b>Всего:</b>
+                <b>
+                  {(total + packaging).toFixed(2)} грн.
+                </b>
               </div>
             </div>
-            <button className="sidecart__order_btn" onClick={onSideCartOpen}>
-              заказать
+            <button className="btn btn--secondary" onClick={onSideCartOpen}>
+              Продолжить
             </button>
           </div>
         : <div className="sidecart__wrap">

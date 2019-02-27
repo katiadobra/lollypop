@@ -5,15 +5,18 @@ const checkoutSummary = props => {
   const { checkoutCancelled, checkoutContinued } = props;
 
   return (
-    <div>
-      <h1>Надеемся вам нравится</h1>
-      <button className="btn btn--delete" onClick={checkoutCancelled}>
-        Cancel
-      </button>
-      <button className="order_btn" onClick={checkoutContinued}>
-        Continue
-      </button>
-    </div>
+    <section className="checkout-summary">
+      <h1 className="page-title">Надеемся вам нравится</h1>
+
+      <div className="checkout-summary__btns">
+        <button className="btn btn--default" onClick={checkoutCancelled}>
+          Вернуться к покупкам
+        </button>
+        <button className="btn btn--secondary" onClick={checkoutContinued}>
+          Заполнить информацию о доставке
+        </button>
+      </div>
+    </section>
   );
 };
 

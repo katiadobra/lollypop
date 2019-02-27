@@ -102,7 +102,7 @@ $break-md: 1281px;
 
 .final_price {
   border-top: 1px solid #d8d8d8;
-  padding: 1rem 0;
+  padding: .7rem 0;
   float: left;
   width: 100%;
 
@@ -125,17 +125,4 @@ $break-md: 1281px;
     float: left;
     width: 100%;
   }
-}
-
-.order_btn {
-  width: calc(100% - 2rem);
-  margin: 1rem;
-  padding: .8rem;
-  border: none;
-  background: #f5c5d1;
-  color: #5a5a5a;
-
-  text-transform: uppercase;
-  outline: none;
-  cursor: pointer;
 }
