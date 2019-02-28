@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import itemActionsReducer from './store/reducers/itemActions';
+import itemActionsReducer from './store/reducers/itemActionsReducer';
 import orderReducer from './store/reducers/order';
 
 const composeEnhancers =
