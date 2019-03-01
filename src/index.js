@@ -9,10 +9,13 @@ import thunk from 'redux-thunk';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import itemActionsReducer from './store/reducers/itemActions';
+import itemActionsReducer from './store/reducers/itemActionsReducer';
 import orderReducer from './store/reducers/order';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  process.env.NODE_ENV === 'development'
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : null || compose;
 
 const rootReducer = combineReducers({
   itemActions: itemActionsReducer,

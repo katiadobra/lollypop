@@ -20,7 +20,6 @@ class LollypopList extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     this.props.onInitItems();
   }
 

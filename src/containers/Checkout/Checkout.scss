@@ -1,3 +1,9 @@
+$break-small: 700px;
+
 .checkout {
   background-color: transparent;
+
+  @media screen and (max-width: $break-small) {
+    padding: 0 20px;
+  }
 }
