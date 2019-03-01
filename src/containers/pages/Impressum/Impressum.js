@@ -6,13 +6,16 @@ const impressum = () => {
     <section className="impressum">
       <h1 className="page-title">Контакты</h1>
       <div className="impressum__btn-wrap">
-        <a className="btn" href="mailto:lolly.pp.ua@gmail.com">
+        <a
+          className="btn btn--secondary btn--small"
+          href="mailto:lolly.pp.ua@gmail.com"
+        >
           Написать нам
         </a>
       </div>
 
       <p>
-        <strong>ПРИЕМ ОНЛАЙН-ЗАКАЗОВ:</strong>
+        <strong>ПРИЁМ ОНЛАЙН-ЗАКАЗОВ:</strong>
         <br /> ежедневно с 11.00 до 20.00
       </p>
       <p>

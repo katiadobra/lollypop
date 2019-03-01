@@ -2,7 +2,7 @@ $break-small: 700px;
 $break-large: 900px;
 $break-md: 1281px;
 
-.thank_you {
+.thank-you {
   position: fixed;
   top: 0;
   left: 0;
@@ -48,10 +48,5 @@ $break-md: 1281px;
 
   &__btn {
     width: auto;
-    padding: 1rem 2rem;
-
-    @media screen and (max-width: $break-small) {
-      padding: .7rem 1rem;
-    }
   }
 }

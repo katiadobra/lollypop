@@ -1,0 +1,23 @@
+$break-small: 700px;
+
+.checkout-summary {
+  &__btns {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: $break-small) {
+      .btn:first-child {
+        background-color: transparent;
+      }
+    }
+
+    @media screen and (min-width: $break-small) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
