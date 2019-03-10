@@ -32,7 +32,7 @@ class Checkout extends Component {
                 component={ContactData}
               />
             </div>
-          : <Redirect to="/" />}
+          : <Redirect to="/thanks" />}
       </div>
     );
   }

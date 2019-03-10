@@ -4,11 +4,17 @@ import './ThanksPage.scss';
 const thanksPage = props => {
   return (
     <div className="thank-you">
-      <h1 className="thank-you__caption">Спасибо за заказ!</h1>
-      <p>Мы доставим вашу посылку в ближайшее время.</p>
-      <button className="btn btn--secondary" onClick={() => props.reload()}>
-        Вернуться к покупкам
-      </button>
+      <section className="page-info">
+        <h1 className="thank-you__ttl">Спасибо за заказ!</h1>
+        <p>
+          Мы свяжемся с Вами по почте или по указанному номеру телефона для
+          уточнения деталей заказа и, после оплаты, доставим посылку в ближайшее
+          время.
+        </p>
+        <a className="btn btn--secondary" href="/">
+          Вернуться к покупкам
+        </a>
+      </section>
     </div>
   );
 };

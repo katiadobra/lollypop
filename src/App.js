@@ -6,6 +6,7 @@ import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 import Delivery from './containers/pages/Delivery/Delivery';
 import Impressum from './containers/pages/Impressum/Impressum';
+import ThanksPage from './containers/pages/ThanksPage/ThanksPage';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="/orders" component={Orders} />
             <Route path="/delivery" component={Delivery} />
             <Route path="/impressum" component={Impressum} />
+            <Route path="/thanks" component={ThanksPage} />
             <Route path="/" exact component={LollypopList} />
           </Switch>
         </Layout>
