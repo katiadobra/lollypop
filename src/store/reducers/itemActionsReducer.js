@@ -41,7 +41,9 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.items,
-        error: false
+        error: false,
+        total_items: 0,
+        totalPrice: 0
       };
 
     case actionTypes.FETCH_ITEMS_FAILD:
