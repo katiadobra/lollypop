@@ -5,34 +5,29 @@ const Details = props => {
   const { data, add, remove } = props;
 
   return (
-    <section className="details">
-      <h1>
-        {data.name}
-      </h1>
+    <div className="details-page">
+      <section className="details">
+        <h1>
+          {data.name}
+        </h1>
 
-      <img
-        src={data.src}
-        alt={data.name}
-        style={{
-          'max-width': '100%',
-          width: '100%'
-        }}
-      />
+        <img className="details__img" src={data.src} alt={data.name} />
 
-      <button
-        className="btn btn--primary btn--small"
-        onClick={() => add(data.id, data.cost)}
-      >
-        В корзину
-      </button>
-      <button
-        className="btn btn--default btn--small"
-        disabled={!data.qty}
-        onClick={() => remove(data.id, data.cost)}
-      >
-        Удалить
-      </button>
-    </section>
+        <button
+          className="btn btn--primary btn--small"
+          onClick={() => add(data.id, data.cost)}
+        >
+          В корзину
+        </button>
+        <button
+          className="btn btn--default btn--small"
+          disabled={!data.qty}
+          onClick={() => remove(data.id, data.cost)}
+        >
+          Удалить
+        </button>
+      </section>
+    </div>
   );
 };
 
