@@ -10,18 +10,23 @@ class Modal extends Component {
   }
 
   render() {
-    const { show, modalClosed } = this.props;
+    const { show, closed } = this.props;
 
     return (
       <Aux>
-        <Backdrop show={show} clicked={modalClosed} />
+        <Backdrop show={show} clicked={closed} />
         <div
-          className="page-modal"
+          className={`page-modal  ${show ? 'open' : 'close'}`}
           style={{
             transform: show ? 'translateY(0)' : 'translateY(-100vh)',
             opacity: show ? '1' : '0'
           }}
         >
+          <div className="side-drawer__header">
+            <button className="close-btn" onClick={closed}>
+              закрыть
+            </button>
+          </div>
           {this.props.children}
         </div>
       </Aux>
