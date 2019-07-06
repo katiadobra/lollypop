@@ -32,7 +32,7 @@ const OrderSummaryItem = props => {
 class OrderSummary extends Component {
   render() {
     const { data, price, packaging, purchaseContinued } = this.props;
-    let dataCopied = data.filter(item => item.qty !== 0);
+    let dataCopied = data.filter(item => item.qty !== 0 || null);
 
     return (
       <Aux>
