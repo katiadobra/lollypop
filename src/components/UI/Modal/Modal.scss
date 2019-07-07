@@ -1,18 +1,24 @@
 .page-modal {
   position: fixed;
-  z-index: 500;
-  background-color: #fff2f3;
-  width: 70%;
+  width: auto;
+  max-height: 100%;
   padding: 16px;
-  left: 15%;
-  top: 30%;
+  left: 0;
+  top: 0;
+
+  background-color: #fff;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
+  z-index: 200;
 }
 
 @media (min-width: 600px) {
   .page-modal {
-    width: 500px;
-    left: calc(50% - 250px);
+    right: 0;
+    bottom: 0;
+    height: 88%;
+    overflow: auto;
+    background-color: #f2f2f2;
+    margin: 40px;
   }
 }

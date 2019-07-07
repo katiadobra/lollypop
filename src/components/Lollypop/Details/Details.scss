@@ -1,0 +1,15 @@
+$break-small: 700px;
+$break-large: 900px;
+$break-md: 1281px;
+
+.details-page {
+  display: flex;
+}
+
+.details {
+  margin: auto;
+
+  &__img {
+    width: 100%;
+  }
+}
