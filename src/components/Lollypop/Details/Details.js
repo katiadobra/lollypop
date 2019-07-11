@@ -1,6 +1,8 @@
 import React from 'react';
 import './Details.scss';
 
+import ResponsiveImage from '../../UI/ResponsiveImage/ResponsiveImage';
+
 const Details = props => {
   const { data, add, remove } = props;
 
@@ -11,7 +13,11 @@ const Details = props => {
           {data.name}
         </h1>
 
-        <img className="details__img" src={data.src} alt={data.name} />
+        <ResponsiveImage
+          src={data.img}
+          alt={data.name}
+          className="details__img"
+        />
 
         <button
           className="btn btn--primary btn--small"
