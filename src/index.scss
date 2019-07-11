@@ -125,3 +125,15 @@ a {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, .07);
 }
+
+/* Make the selected text red on a yellow background
+   Code for Firefox */
+::-moz-selection {
+  color: #fff;
+  background: rgb(143, 221, 202);
+}
+
+::selection {
+  color: #fff;
+  background: rgb(143, 221, 202);
+}
