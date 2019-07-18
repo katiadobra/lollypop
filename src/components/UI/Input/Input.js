@@ -22,9 +22,11 @@ const input = props => {
           id={id}
           onChange={change}
           className="input-group__input"
+          autoComplete="off"
         />
       );
       break;
+
     case 'textarea':
       inputElement = (
         <textarea
@@ -36,6 +38,7 @@ const input = props => {
         />
       );
       break;
+
     default:
       inputElement = (
         <input

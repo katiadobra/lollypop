@@ -53,13 +53,14 @@ $break-md: 1281px;
     font-size: 14px;
     white-space: nowrap;
   }
+}
 
-  .page-info {
-    margin: auto;
-    max-width: 520px;
-    width: 95%;
-    padding: 1rem;
-    background: rgba(255, 255, 255, .95);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
-  }
+.page-info {
+  margin: auto;
+  max-width: 520px;
+  width: 95%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  text-align: center;
 }
