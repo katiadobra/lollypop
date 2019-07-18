@@ -8,6 +8,7 @@ import Delivery from './containers/pages/Delivery/Delivery';
 import Impressum from './containers/pages/Impressum/Impressum';
 import Auth from './containers/pages/Auth/Auth';
 import NotFound from './containers/pages/404/404';
+import ThanksPage from './containers/pages/ThanksPage/ThanksPage';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/orders" component={Orders} />
           <Route path="/delivery" component={Delivery} />
           <Route path="/impressum" component={Impressum} />
+          <Route path="/thanks" component={ThanksPage} />
           <Route path="/auth" component={Auth} />
           <Route path="/404" component={NotFound} />
           <Route path="/" exact component={LollypopList} />

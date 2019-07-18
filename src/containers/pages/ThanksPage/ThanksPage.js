@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './ThanksPage.scss';
 
-const thanksPage = props => {
-  return (
-    <div className="thank-you">
-      <h1 className="thank-you__caption">Спасибо за заказ!</h1>
-      <p>Мы доставим вашу посылку в ближайшее время.</p>
-      <button className="btn btn--secondary" onClick={() => props.reload()}>
-        Вернуться к покупкам
-      </button>
-    </div>
-  );
-};
+class ThanksPage extends Component {
+  returnHandler = () => {
+    this.props.history.push('/');
+  };
 
-export default thanksPage;
+  render() {
+    return (
+      <div className="thank-you">
+        <section className="page-info">
+          <h1 className="thank-you__ttl">Спасибо за заказ!</h1>
+          <p>
+            Мы свяжемся с Вами по почте или по указанному номеру телефона для
+            уточнения деталей заказа и, после оплаты, доставим посылку в
+            ближайшее время.
+          </p>
+          <button className="btn btn--secondary" onClick={this.returnHandler}>
+            Вернуться к покупкам
+          </button>
+        </section>
+      </div>
+    );
+  }
+}
+
+export default ThanksPage;

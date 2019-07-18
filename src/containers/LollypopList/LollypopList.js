@@ -20,7 +20,9 @@ class LollypopList extends Component {
   };
 
   componentDidMount() {
-    this.props.onInitItems();
+    if (!this.props.itms || this.props.purchased) {
+      this.props.onInitItems();
+    }
   }
 
   sideCartToggleHandler = () => {
@@ -102,7 +104,8 @@ const mapStateToProps = state => {
     itms: state.itemActions.items,
     totalPrice: state.itemActions.totalPrice,
     total_items: state.itemActions.total_items,
-    error: state.itemActions.error
+    error: state.itemActions.error,
+    purchased: state.order.purchased
   };
 };
 

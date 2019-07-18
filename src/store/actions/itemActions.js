@@ -31,7 +31,7 @@ export const fetchItemsFaild = () => {
 export const initItems = () => {
   return dispatch => {
     axios
-      .get('https://lollypop-c3378.firebaseio.com/catalog.json')
+      .get('https://lollyppua-9bb54.firebaseio.com/catalog.json')
       .then(res => {
         dispatch(setItems(res.data));
       })

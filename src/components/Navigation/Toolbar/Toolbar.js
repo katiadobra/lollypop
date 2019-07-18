@@ -14,8 +14,8 @@ class Toolbar extends Component {
 
     return (
       <header className="page-header">
-        <Teaser code="2019MAMA8">
-          Предложение к 8 Марта: Получи скидку 20 грн.
+        <Teaser code="2019SEPTEMBER1">
+          Предложение к 1 Сентября: Получи скидку 20 грн.
         </Teaser>
         <button className="drawer-toggle" onClick={open}>
           <svg viewBox="0 0 86 59" id="icon-menu" width="100%" height="100%">
