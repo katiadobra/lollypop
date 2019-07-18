@@ -23,6 +23,8 @@ class App extends Component {
           <Route path="/auth" component={Auth} />
           <Route path="/404" component={NotFound} />
           <Route path="/" exact component={LollypopList} />
+
+          <Route path="" component={NotFound} />
         </Switch>
       </Layout>
     );

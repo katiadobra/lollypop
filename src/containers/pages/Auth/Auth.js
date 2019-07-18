@@ -120,7 +120,7 @@ class Auth extends Component {
           {form}
 
           <button
-            className="auth-form__btn btn"
+            className="btn btn--secondary"
             onClick={() => console.log('click btn')}
             type="submit"
           >

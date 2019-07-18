@@ -8,7 +8,6 @@ const navigationItems = props =>
     <NavigationItem link="/">Каталог</NavigationItem>
     <NavigationItem link="/delivery">Как заказать</NavigationItem>
     <NavigationItem link="/impressum">Контакты</NavigationItem>
-    <NavigationItem link="/auth">Войти</NavigationItem>
   </ul>;
 
 const NavigationItem = props =>

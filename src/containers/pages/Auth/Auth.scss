@@ -1,7 +1,13 @@
 .auth {
   height: 100%;
+  width: 100%;
+
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: url('../../../assets/img/flamingo-bg2.jpg') 0 0;
+  text-align: center;
 
   &__ttl {
     margin-bottom: 40px;
