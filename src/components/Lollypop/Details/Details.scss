@@ -10,6 +10,7 @@ $break-md: 1281px;
   margin: auto;
 
   &__img {
-    width: 100%;
+    width: auto;
+    max-height: 60vh;
   }
 }
