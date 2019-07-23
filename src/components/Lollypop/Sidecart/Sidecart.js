@@ -69,7 +69,7 @@ const sidecart = props => {
           </div>
         : <div className="sidecart__wrap">
             <div className="sidecart__content">
-              <b>Ваша корзина пуста...</b>
+              <b>Корзина пуста...</b>
             </div>
           </div>}
     </div>

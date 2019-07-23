@@ -5,7 +5,7 @@ $break-md: 1281px;
 .sidecart {
   &__caption {
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   &__wrap {
@@ -55,7 +55,6 @@ $break-md: 1281px;
   &__content {
     flex: 1;
     overflow: auto;
-    padding-bottom: 1rem;
 
     @media screen and (max-width: $break-small) {
       display: none;
