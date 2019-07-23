@@ -123,6 +123,7 @@ class Auth extends Component {
             className="btn btn--secondary"
             onClick={() => console.log('click btn')}
             type="submit"
+            aria-label="Sign in"
           >
             Войти
           </button>

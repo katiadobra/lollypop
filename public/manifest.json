@@ -1,5 +1,6 @@
 {
-  "name": "Lollypop App",
+  "short_name": "Shop",
+  "name": "Lollypop Shop",
   "icons": [
     {
       "src": "/android-icon-36x36.png",

@@ -13,7 +13,11 @@ class NotFound extends Component {
           <h4 className="not-found__ttl">404</h4>
           <p>Страница не найдена</p>
           <div>
-            <button className="btn btn--secondary" onClick={this.returnHandler}>
+            <button
+              className="btn btn--secondary"
+              onClick={this.returnHandler}
+              aria-label="Go to main page"
+            >
               На главную
             </button>
           </div>
