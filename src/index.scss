@@ -2,6 +2,11 @@ $break-small: 700px;
 $break-large: 900px;
 $break-md: 1281px;
 
+@font-face {
+  font-family: 'Philosopher';
+  src: url("./assets/fonts/Philosopher-Regular.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -116,10 +121,6 @@ code {
 
 a {
   text-decoration: none;
-}
-
-p {
-  font-family: 'Open Sans', sans-serif;
 }
 
 ::-webkit-scrollbar-track {
