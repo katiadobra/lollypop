@@ -191,6 +191,7 @@ class ContactData extends Component {
         <button
           className="btn btn--secondary"
           disabled={!this.state.formIsValid}
+          aria-label="Order"
         >
           Заказать
         </button>

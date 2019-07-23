@@ -59,7 +59,11 @@ const sidecart = props => {
                 </b>
               </div>
             </div>
-            <button className="btn btn--secondary" onClick={onSideCartOpen}>
+            <button
+              className="btn btn--secondary"
+              onClick={onSideCartOpen}
+              aria-label="Go to the next step"
+            >
               Продолжить
             </button>
           </div>

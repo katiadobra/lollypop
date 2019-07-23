@@ -16,7 +16,11 @@ class ThanksPage extends Component {
             уточнения деталей заказа и, после оплаты, доставим посылку в
             ближайшее время.
           </p>
-          <button className="btn btn--secondary" onClick={this.returnHandler}>
+          <button
+            className="btn btn--secondary"
+            onClick={this.returnHandler}
+            aria-label="Go to main page"
+          >
             Вернуться к покупкам
           </button>
         </section>

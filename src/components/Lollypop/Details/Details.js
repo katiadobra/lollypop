@@ -16,6 +16,7 @@ const Details = props => {
         <button
           className="btn btn--primary btn--small"
           onClick={() => add(data.id, data.cost)}
+          aria-label="Add item to the cart"
         >
           В корзину
         </button>
@@ -23,6 +24,7 @@ const Details = props => {
           className="btn btn--default btn--small"
           disabled={!data.qty}
           onClick={() => remove(data.id, data.cost)}
+          aria-label="Remove item from the cart"
         >
           Удалить
         </button>

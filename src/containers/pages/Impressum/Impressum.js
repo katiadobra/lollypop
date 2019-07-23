@@ -9,6 +9,8 @@ const impressum = () => {
         <a
           className="btn btn--secondary btn--small"
           href="mailto:lolly.pp.ua@gmail.com"
+          role="button"
+          aria-label="Contact us with email"
         >
           Написать нам
         </a>
@@ -20,17 +22,12 @@ const impressum = () => {
       </p>
       <p>
         Email:
-        <a href="mailto:lolly.pp.ua@gmail.com">lolly.pp.ua@gmail.com</a>
-      </p>
-
-      <p>
-        Facebook:
         <a
-          href="https://www.facebook.com/lolly.pp.ua.admin"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:lolly.pp.ua@gmail.com"
+          role="button"
+          aria-label="Contact us with email"
         >
-          facebook.com/lolly.pp.ua.admin
+          lolly.pp.ua@gmail.com
         </a>
       </p>
 
@@ -40,8 +37,23 @@ const impressum = () => {
           href="https://www.instagram.com/lolly.pp.ua/"
           target="_blank"
           rel="noopener noreferrer"
+          role="button"
+          aria-label="Go to our Instagram page"
         >
           instagram.com/lolly.pp.ua
+        </a>
+      </p>
+
+      <p>
+        Facebook:
+        <a
+          href="https://www.facebook.com/lolly.pp.ua.admin"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="button"
+          aria-label="Go to our facebook page"
+        >
+          facebook.com/lolly.pp.ua.admin
         </a>
       </p>
     </section>

@@ -70,7 +70,11 @@ class OrderSummary extends Component {
                 </b>
               </div>
             </div>
-            <button className="btn btn--secondary" onClick={purchaseContinued}>
+            <button
+              className="btn btn--secondary"
+              onClick={purchaseContinued}
+              aria-label="Checkout"
+            >
               Оформить заказ
             </button>
           </div>

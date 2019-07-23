@@ -23,7 +23,7 @@ class SideDrawer extends Component {
             <span>
               {caption}
             </span>
-            <button className="close-btn" onClick={closed}>
+            <button className="close-btn" onClick={closed} aria-label="Close">
               закрыть
             </button>
           </div>

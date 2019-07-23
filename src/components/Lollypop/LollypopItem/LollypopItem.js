@@ -40,6 +40,7 @@ class LollypopItem extends Component {
           <button
             className="btn btn--primary btn--small"
             onClick={() => addToCart(item.id, item.cost)}
+            aria-label="Add item to the cart"
           >
             В корзину
           </button>
@@ -47,6 +48,7 @@ class LollypopItem extends Component {
             className="btn btn--default btn--small"
             disabled={!item.qty}
             onClick={() => removeFromCart(item.id, item.cost)}
+            aria-label="Remove item from the cart"
           >
             Удалить
           </button>
