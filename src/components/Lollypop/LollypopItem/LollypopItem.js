@@ -44,14 +44,15 @@ class LollypopItem extends Component {
           >
             В корзину
           </button>
-          <button
-            className="btn btn--default btn--small"
-            disabled={!item.qty}
-            onClick={() => removeFromCart(item.id, item.cost)}
-            aria-label="Remove item from the cart"
-          >
-            Удалить
-          </button>
+          {item.qty
+            ? <button
+                className="btn btn--default btn--small"
+                onClick={() => removeFromCart(item.id, item.cost)}
+                aria-label="Remove item from the cart"
+              >
+                Удалить
+              </button>
+            : null}
         </div>
         <Modal show={showDetailsCard} closed={this.openItemDetails}>
           <Details data={item} add={addToCart} remove={removeFromCart} />

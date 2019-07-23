@@ -4,7 +4,8 @@ $break-md: 1281px;
 
 @font-face {
   font-family: 'Philosopher';
-  src: url("./assets/fonts/Philosopher-Regular.ttf");
+  font-display: auto;
+  src: url(./assets/fonts/Philosopher-Regular.ttf);
 }
 
 body {
@@ -102,8 +103,7 @@ code {
 
   &--disabled,
   &:disabled {
-    opacity: .3;
-    color: #cecece;
+    opacity: .5;
     text-decoration: none;
     pointer-events: none;
     cursor: not-allowed;

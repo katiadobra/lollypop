@@ -38,7 +38,6 @@ class Toolbar extends Component {
           className="sidecart_btn"
           onClick={onSideCartOpen}
           aria-label="total amount in the Cart"
-          aria-labelledby="labeldiv"
         >
           <img src={Cart} alt="" />
           {/* <svg viewBox="0 0 19 19" id="icon-basket" width="100%" height="100%">
