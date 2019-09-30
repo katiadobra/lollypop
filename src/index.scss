@@ -2,6 +2,12 @@ $break-small: 700px;
 $break-large: 900px;
 $break-md: 1281px;
 
+@font-face {
+  font-family: 'Philosopher';
+  font-display: auto;
+  src: url(./assets/fonts/Philosopher-Regular.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -34,6 +40,11 @@ code {
   }
 }
 
+.app,
+.main {
+  height: 100%;
+}
+
 .page-title {
   margin: 10px 0 30px;
   text-align: center;
@@ -48,6 +59,7 @@ code {
   border: none;
   background-color: #fff;
   color: #5a5a5a;
+  font-size: 12px;
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
@@ -91,8 +103,7 @@ code {
 
   &--disabled,
   &:disabled {
-    opacity: .3;
-    color: #cecece;
+    opacity: .5;
     text-decoration: none;
     pointer-events: none;
     cursor: not-allowed;

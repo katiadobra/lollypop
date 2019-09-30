@@ -25,7 +25,11 @@ class Modal extends Component {
           }}
         >
           <div className="side-drawer__header">
-            <button className="close-btn" onClick={closed}>
+            <button
+              className="close-btn"
+              onClick={closed}
+              aria-label="Close Modal window"
+            >
               закрыть
             </button>
           </div>

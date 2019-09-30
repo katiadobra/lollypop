@@ -40,16 +40,19 @@ class LollypopItem extends Component {
           <button
             className="btn btn--primary btn--small"
             onClick={() => addToCart(item.id, item.cost)}
+            aria-label="Add item to the cart"
           >
             В корзину
           </button>
-          <button
-            className="btn btn--default btn--small"
-            disabled={!item.qty}
-            onClick={() => removeFromCart(item.id, item.cost)}
-          >
-            Удалить
-          </button>
+          {item.qty
+            ? <button
+                className="btn btn--default btn--small"
+                onClick={() => removeFromCart(item.id, item.cost)}
+                aria-label="Remove item from the cart"
+              >
+                Удалить
+              </button>
+            : null}
         </div>
 
         <Modal show={showDetailsCard} closed={this.openItemDetails}>
