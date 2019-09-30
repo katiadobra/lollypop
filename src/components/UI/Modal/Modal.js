@@ -18,7 +18,9 @@ class Modal extends Component {
         <div
           className={`page-modal  ${show ? 'open' : 'close'}`}
           style={{
-            transform: show ? 'translateY(0)' : 'translateY(-100vh)',
+            transform: show
+              ? 'translate(-50%, -50%)'
+              : 'translate(-50%, -100vh)',
             opacity: show ? '1' : '0'
           }}
         >

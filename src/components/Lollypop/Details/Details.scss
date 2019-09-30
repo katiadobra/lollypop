@@ -7,10 +7,13 @@ $break-md: 1281px;
 }
 
 .details {
+  width: 100%;
   margin: auto;
+  overflow: hidden;
 
   &__img {
-    width: auto;
-    max-height: 60vh;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
   }
 }

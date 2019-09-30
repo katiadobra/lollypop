@@ -54,8 +54,10 @@ class LollypopItem extends Component {
               </button>
             : null}
         </div>
+
         <Modal show={showDetailsCard} closed={this.openItemDetails}>
-          <Details data={item} add={addToCart} remove={removeFromCart} />
+          {showDetailsCard &&
+            <Details data={item} add={addToCart} remove={removeFromCart} />}
         </Modal>
       </div>
     );

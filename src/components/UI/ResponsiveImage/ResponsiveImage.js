@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const responsiveImage = props => {
-  const { src, alt, className } = props;
+class ResponsiveImage extends Component {
+  render() {
+    const { src, alt, className } = this.props;
+    return (
+      <img
+        src={src.small}
+        srcSet={`${src.small} 600w, ${src.medium} 1000w, ${src.large} 1280w`}
+        alt={alt}
+        className={className}
+      />
+    );
+  }
+}
 
-  return (
-    <img
-      src={src.medium}
-      srcSet={`${src.small} 300w, ${src.medium} 768w, ${src.large} 1280w, ${src.xlarge ||
-        src.large} 3200w`}
-      alt={alt}
-      className={className}
-    />
-  );
-};
-
-export default responsiveImage;
+export default ResponsiveImage;

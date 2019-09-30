@@ -41,13 +41,17 @@ class Layout extends Component {
           open={this.sideDrawerToggleHandler}
           onSideCartOpen={this.sideCartToggleHandler}
         />
+
         <SideDrawer
           show={showSideDraw}
           closed={this.sideDrawerClosedHandler}
           caption="Меню"
         >
-          <Logo />
-          <Nav />
+          {showSideDraw &&
+            <Aux>
+              <Logo />
+              <Nav />
+            </Aux>}
         </SideDrawer>
         {/* <OrderSummary open={showSideCart} closed={this.sideCartCloseHandler} /> */}
 

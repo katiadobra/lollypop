@@ -62,12 +62,6 @@ $break-md: 1281px;
     width: calc(33.33% - 2rem);
   }
 
-  &:hover {
-    .llp-item__img {
-      transform: scale(1.3);
-    }
-  }
-
   .btn {
     &:disabled {
       visibility: hidden;
