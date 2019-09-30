@@ -1,40 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Details.scss';
 
 import ResponsiveImage from '../../UI/ResponsiveImage/ResponsiveImage';
 
-const Details = props => {
-  const { data, add, remove } = props;
+class Details extends Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.show !== this.props.show;
+  }
 
-  return (
-    <div className="details-page">
-      <section className="details">
-        <h1>
-          {data.name}
-        </h1>
+  render() {
+    const { data } = this.props;
 
-        <ResponsiveImage
-          src={data.img}
-          alt={data.name}
-          className="details__img"
-        />
-
-        <button
-          className="btn btn--primary btn--small"
-          onClick={() => add(data.id, data.cost)}
-        >
-          В корзину
-        </button>
-        <button
-          className="btn btn--default btn--small"
-          disabled={!data.qty}
-          onClick={() => remove(data.id, data.cost)}
-        >
-          Удалить
-        </button>
-      </section>
-    </div>
-  );
-};
+    return (
+      <div className="details-page">
+        <section className="details">
+          <ResponsiveImage
+            src={data.img}
+            alt={data.name}
+            className="details__img"
+          />
+        </section>
+      </div>
+    );
+  }
+}
 
 export default Details;
