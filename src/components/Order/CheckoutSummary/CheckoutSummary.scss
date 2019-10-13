@@ -1,6 +1,18 @@
 $break-small: 700px;
 
 .checkout-summary {
+  &__container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-size: 15px;
+    line-height: 1.8em;
+
+    @media screen and (min-width: $break-small) {
+      margin: 30px auto;
+    }
+  }
+
   &__btns {
     display: flex;
     flex-direction: column-reverse;
@@ -19,5 +31,9 @@ $break-small: 700px;
       align-items: center;
       margin-bottom: 2.5rem;
     }
+  }
+
+  .summary-item__img {
+    max-height: none;
   }
 }

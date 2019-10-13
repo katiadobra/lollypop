@@ -7,6 +7,8 @@ $break-md: 1281px;
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d8d8d8;
 
   &:first-child {
     margin-top: 1rem;
@@ -20,6 +22,9 @@ $break-md: 1281px;
     img {
       width: 100%;
       height: auto;
+
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 

@@ -15,7 +15,7 @@ class Details extends Component {
       <div className="details-page">
         <section className="details">
           <ResponsiveImage
-            src={data.img}
+            path={data}
             alt={data.name}
             className="details__img"
           />
