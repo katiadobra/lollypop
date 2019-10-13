@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class ResponsiveImage extends Component {
   render() {
-    const { src, alt, className } = this.props;
+    const { path, alt, className } = this.props;
     return (
       <img
-        src={src.small}
-        srcSet={`${src.small} 600w, ${src.medium} 1000w, ${src.large} 1280w`}
+        src={path.src}
+        srcSet={`${path.src} 600w, ${path.img.medium} 1000w, ${path.img
+          .large} 1280w`}
         alt={alt}
         className={className}
       />

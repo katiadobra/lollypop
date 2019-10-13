@@ -5,6 +5,7 @@ $break-md: 1281px;
 .item-container {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   width: calc(25% - 2rem);
   margin: 1rem;
 

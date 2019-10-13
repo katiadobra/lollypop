@@ -31,7 +31,7 @@ export const fetchItemsFaild = () => {
 export const initItems = () => {
   return dispatch => {
     axios
-      .get('https://lollyppua-9bb54.firebaseio.com/catalog.json')
+      .get(process.env.REACT_APP_CATALOG_PATH)
       .then(res => {
         dispatch(setItems(res.data));
       })
