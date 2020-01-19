@@ -34,3 +34,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Sponsoring
+
+If you like my work and want to support the development of the project, now you can! Just:
+
+<a href="https://www.buymeacoffee.com/katiadobra" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-white.png" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" alt="Buy Me A Coffee" ></a>
+
+## License
+
+The project is released under the MIT License. Check the [original theme license](https://github.com/katiadobra/lollypop/blob/master/LICENSE) for additional licensing information.
